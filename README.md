@@ -8,13 +8,12 @@ patchnote is the difference between vanilla & the mod
 
 - 10% to 5% for admin_efficiency & dev_efficiency at admin tech 17, 23, 27
 - removed coring delay with absolutism
-- added 2 greatpower slot, gaining 8 & 5 powerprojection respectively (todo gui)
+- added 2 greatpower slot, gaining 8 & 5 powerprojection respectively
 - spy tech now unlocked every two lvl after lvl 5, except for libertydesire that wait for 1700 & admin_infiltration tech lvl27
 
 ### AI improvement
 
 - added 1 diplo slot for ias only
-- -0.5 interest for ias only (helping them avoiding spiral debt)
 - acceptable balance for ia entering battle from 1.7 to 1.5
 - halved ia forget chance in fog of war
 - doubled ia opportunism against hated/weak country

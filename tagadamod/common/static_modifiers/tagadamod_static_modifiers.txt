@@ -556,7 +556,6 @@ base_values = {
 # AI 'cheats' that compensate for flaws in its long-term decision making, removing these may severely cripple the AI
 ai_nation = {
 	diplomatic_upkeep = 1					# TAGADAMOD added to help ia go over the limit with alliance
-	interest = -0.5							# TAGADAMOD added to help prevent ia going into spiral debts, so in hard/vh they have -1.5 base interest
 	diplomats = 1 							# ai has to reserve a diplomat for short term action so it gets an extra to put it on equal footing with player
 	free_leader_pool = 1					# ai needs to have enough pool for 1 general & 1 admiral
 	sailors_recovery_speed = 0.25
