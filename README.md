@@ -10,6 +10,11 @@ patchnote is the difference between vanilla & the mod
 - removed coring delay with absolutism
 - added 2 greatpower slot, gaining 8 & 5 powerprojection respectively
 - spy tech now unlocked every two lvl after lvl 5, except for libertydesire that wait for 1700 & admin_infiltration tech lvl27
+- rebels from 1 to 2% moral per tech lvl
+- rebels from 0.03 to 0.05 size per tech lvl
+- rebels artillery 0.15 to 0.25 when above tech lvl16
+- coastal_defence lvl1 improved: now deals 1% attrition
+- ramparts improved: now also add 1 fort lvl
 
 ### AI improvement
 
@@ -24,15 +29,18 @@ patchnote is the difference between vanilla & the mod
 - 0.005 to 0.010 excessive demand factor in peace offer
 - 20 to 30 excessive demand threshold in peace offer
 - 0.5 to 0.75 force balance perception factor of other countries who are involved in a different war with either side
-- IA fort maintenance cheat forced to 1 (should be activated anyway in higher difficulty)
 - dishonorable peace from 12 to 18 month
 - peace is dishonorable when having more than -15 (instead of original -10)
 - refuse a call to arm with caller : 30 trust (was 20)
 - refuse a call to arm with everyone else : 10 trust (was 5)
 - no land when promised (scale with participation & dev) : 30 trust (was 20)
 - separate peace trust penalty : 15 (was 10)
-
-### diplomatic war change
+- improved AI decisionmaking regarding building, inspired by https://github.com/Mxt-dot/BetterAI
+	-> AI will do more economic buildings, and improve forts..
+- improved AI decisionmaking regarding mana, inspired by https://github.com/Mxt-dot/BetterAI
+	-> AI will make institution spawn, & will spend mana to dev province when maxed
+- improved AI decisionmaking regarding estates, inspired by https://github.com/Mxt-dot/BetterAI
+### diplomacy & aggresive expansion
 
 - scaled truce from 10 to 15 year at 100% warscore
 - revanchism decay from 100% in 10y to 100% in 15years
@@ -44,12 +52,6 @@ patchnote is the difference between vanilla & the mod
 - AE distance base 0.75 => 0.25 (should increase ae with far away country)
 - AE from gaining a province with threat (no war) 1 => 0.75
 - peace cost for releasing a nation 1 => 0.75
-
-### rebels
-
-- rebels from 1 to 2% moral per tech lvl
-- rebels from 0.03 to 0.05 size per tech lvl
-- rebels artillery 0.15 to 0.25 when above tech lvl16
 
 
 ### multiplayer QOL

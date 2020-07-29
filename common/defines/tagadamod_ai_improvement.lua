@@ -44,11 +44,44 @@ NDefines.NAI.PEACE_OTHER_WAR_FORCE_BALANCE_MULT = 0.75 -- 0.5, -- Multiplies the
 -- NDefines.NAI.PEACE_WAR_DIRECTION_WINNING_MULT = 5.0, -- Multiplies AI emphasis on war direction if it's the one making gains
 -- NDefines.NAI.PEACE_FORCE_BALANCE_FACTOR = 0.2, -- AI willingness to peace based on strength estimation of both sides
 
--- should help AI with forts, todo test more...
-NDefines.NAI.FORT_MAINTENANCE_CHEAT = 1
-
 -- keeping this here to test one day
 -- NDefines.NAI.INVADING_BRAVERY = 1.0 -- TODO undestand what this means : -- If (defender strength) / (invader strength) >
 -- NDefines.NAI.INVADING_MAX_AWAY_RATIO = 0.45 -- TODO test this -- AI will never send more than this ratio to invade (Measured in strength)
+
+-- added values inspired from https://github.com/Mxt-dot/BetterAI
+NDefines.NAI.DEVELOPMENT_CAP_BASE = 50 -- 20
+NDefines.NAI.DEVELOPMENT_CAP_MULT = 10 -- 2
+
+NDefines.NAI.PEACE_TERMS_PROVINCE_IMPERIAL_LIBERATION_MULT = 2.0 -- 0.25, --AI Emperor's desire for a province is multiplied by this if this is an Imperial Liberation CB war.
+NDefines.NAI.PEACE_TERMS_PROVINCE_NO_CB_MULT = 1.0 -- 0.5, -- AI desire for a province is multiplied by this if it doesn't have a valid cb for it (only used when annexing, not applied to cores)
+NDefines.NAI.PEACE_TERMS_PROVINCE_CORE_MULT = 4.0 -- 3.0, -- AI desire for a province is multiplied by this if it has a core on it
+NDefines.NAI.PEACE_TERMS_PROVINCE_WARGOAL_MULT = 3.0 -- 2.0, -- AI desire for a province is multiplied by this if it is the wargoal
+NDefines.NAI.PEACE_TERMS_PROVINCE_CLAIM_MULT = 3.0 -- 2.0, -- AI desire for a province is multiplied by this if it has a claim on it
+NDefines.NAI.PEACE_TERMS_PROVINCE_NOT_CULTURE_MULT = 1.0 -- 0.75, -- AI desire for a province is multiplied by this if it is not the same culture
+
+NDefines.NAI.DIPLOMATIC_ACTION_FABRICATE_CLAIM_BASE_FACTOR = 50 -- 25, -- AI scoring for fabricating claims is always increased by this as long as the province is a conquest priority
+NDefines.NAI.DIPLOMATIC_ACTION_FABRICATE_CLAIM_STRATEGY_FACTOR = 1.0 -- 0.5, -- AI scoring for fabricating claims based on strategic conquest priorities
+NDefines.NAI.DIPLOMATIC_ACTION_FABRICATE_CLAIM_OTHER_CB_FACTOR = 0.5 -- 0.0, -- AI scoring for fabricating claims if they already have another CB usable on the province
+NDefines.NAI.DIPLOMATIC_ACTION_FABRICATE_CLAIM_NOT_ADJACENT_FACTOR = 0.75 -- 0.5, -- AI scoring for fabricating claims if the province is not adjacent
+
+NDefines.NAI.OVER_FORCELIMIT_AVOIDANCE_FACTOR = 5 -- 10 -- The higher this number is, the less willing the AI will be to exceed forcelimits
+NDefines.NAI.IMPORANT_PROVINCE_THRESHOLD = 0.02 -- 0.05 -- AI will try to defend provinces under threat worth more than this percentage of total development
+NDefines.NAI.IMPORTANT_PROVINCE_THRESHOLD = 0.02 -- 0.05 -- AI will try to defend provinces under threat worth more than this percentage of total development
+
+NDefines.NAI.ESTATE_PRIVILEGE_REVOKE_THRESHOLD = 7.0 -- ESTATE_PRIVILEGE_REVOKE_THRESHOLD = 5.1,
+NDefines.NAI.ESTATE_PRIVILEGE_GRANT_THRESHOLD = 7.0 -- ESTATE_PRIVILEGE_GRANT_THRESHOLD = 9.9,
+NDefines.NAI.ESTATE_INTERACTION_THRESHOLD = 25.0 -- ESTATE_INTERACTION_THRESHOLD = 49.9,
+NDefines.NAI.ESTATE_MAX_WANTED_INFLUENCE = 85.0 -- ESTATE_MAX_WANTED_INFLUENCE = 73.0,
+NDefines.NAI.ESTATE_MIN_WANTED_CROWNLAND = 21.0 -- ESTATE_MIN_WANTED_CROWNLAND = 33.0,
+NDefines.NAI.ESTATE_MAX_PRIVILEDGES = 4 -- ESTATE_MAX_PRIVILEDGES = 2,
+
+NDefines.NAIEconomy.LOAN_REPAYMENT_SAVINGS_PRIORITY = 0.3 -- 0.1
+NDefines.NAI.REPAY_LOAN_BASE_AI_DESIRE = 10.0 -- 5
+
+NDefines.NAI.DEBASE_THRESHOLD = 1000 -- 10000,-- AI will not debase if it has more gold than this.
+NDefines.NAI.PEACE_TERMS_WAR_REPARATIONS_MIN_INCOME_RATIO = 0.2 -- 0.5, -- AI only wants war reparations if other country has at least this % of their income
+NDefines.NAI.PEACE_TERMS_WAR_REPARATIONS_BASE_MULT = 0.2 -- 0.1 -- AI desire for war reparations through peace
+NDefines.NAI.PEACE_TERMS_GOLD_BASE_MULT = 0.2 -- 0.1
+
 
 
