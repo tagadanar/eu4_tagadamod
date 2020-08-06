@@ -10,9 +10,15 @@ patchnote is the difference between vanilla & the mod
 - removed coring delay with absolutism
 - added 2 greatpower slot, gaining 8 & 5 powerprojection respectively
 - spy tech now unlocked every two lvl after lvl 5, except for libertydesire that wait for 1700 & admin_infiltration tech lvl27
+
+### rebels
+
 - rebels from 1 to 2% moral per tech lvl
 - rebels from 0.03 to 0.05 size per tech lvl
 - rebels artillery 0.15 to 0.25 when above tech lvl16
+
+### buildings
+
 - coastal_defence lvl1 improved: now deals 1% attrition
 - ramparts improved: now also add 1 fort lvl
 
@@ -35,11 +41,41 @@ patchnote is the difference between vanilla & the mod
 - refuse a call to arm with everyone else : 10 trust (was 5)
 - no land when promised (scale with participation & dev) : 30 trust (was 20)
 - separate peace trust penalty : 15 (was 10)
+
 - improved AI decisionmaking regarding building, inspired by https://github.com/Mxt-dot/BetterAI
-	-> AI will do more economic buildings, and improve forts..
+	- generally AI will do more economic buildings, and will improve forts through events. details as follow:
+	- not mentionned building have not been modified, and some specific contextual modifier are not specified here for simplicity
+	- those values are all from BetterAI and might benefit from more iteration
+	- *T1* marketplace 1.5 => 2
+	- workshop 1 => 20
+	- temple 1 => 15
+	- barracks 1 => 35
+	- shipyard 1 => 0.2 but *20 if close to max ship
+	- coastal def 1 => 0.2
+	- *T2* courthouse 1 => 5
+	- dock 1 => 0.2
+	- regimental camp 1 => 15
+	- naval battery 1 => 0.5
+	- *T3* cathedral 1 => 0.3
+	- university 1 => 15
+	- trade depot 1.5 => 0.2
+	- grand shipyard 1 => 0.2
+	- training fields 1 => 20
+	- *T4* counting house 1 => 0.5
+	- town hall 1 => 5
+	- drydock 1 => 0.2
+	- conscription center 1 => 20
+	- manufactory mostly goes from 1 => 20/25/30, depending on goods produced
+	
 - improved AI decisionmaking regarding mana, inspired by https://github.com/Mxt-dot/BetterAI
-	-> AI will make institution spawn, & will spend mana to dev province when maxed
+	- AI will make institution spawn through events when more than 30years behind and have a enought mana
+	- AI will spend mana to dev province when above 950, also through events
+
 - improved AI decisionmaking regarding estates, inspired by https://github.com/Mxt-dot/BetterAI
+	- ai won't go under 30 crown land, to avoid losing autonomy
+	- ai will sell land twice often when they have a lot of it, so it is safe to do so, and keep economy ok
+	- ai will almost always seize land if they can do it without getting under 30 loyalty
+
 ### diplomacy & aggresive expansion
 
 - scaled truce from 10 to 15 year at 100% warscore
