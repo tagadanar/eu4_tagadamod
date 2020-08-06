@@ -280,7 +280,6 @@ technology = { #Heavy Frigates
 
 	
 	enable = heavy_frigate
-	may_agitate_for_liberty = yes
 }
 
 technology = { #The Archipelago Frigate
@@ -295,7 +294,7 @@ technology = { #The Archipelago Frigate
 	trade_range				=	20
 	enable = archipelago_frigate
 	#may_corrupt_officials = yes
-
+	may_agitate_for_liberty = yes
 }
 
 technology = { #The Threedeckers

@@ -9,11 +9,20 @@ patchnote is the difference between vanilla & the mod
 - 10% to 5% for admin_efficiency & dev_efficiency at admin tech 17, 23, 27
 - removed coring delay with absolutism
 - added 2 greatpower slot, gaining 8 & 5 powerprojection respectively
-- spy tech now unlocked every two lvl after lvl 5, except for libertydesire that wait for 1700 & admin_infiltration tech lvl27
+- spy tech now unlocked every two lvl after lvl 3, except for libertydesire & admin_infiltration
+	- may_steal_maps 6 => 5
+	- may_study_technology 9 => 7
+	- may_slander_merchants 12 => 9
+	- may_sabotage_recruitment 15 => 11
+	- may_sow_discontent 18 => 13
+	- may_sabotage_reputation 21 => 15
+	- may_corrupt_officials 24 => 17
+	- may_agitate_for_liberty 27 => 24
+	- may_infiltrate_administration 30 => 27
 
 ### rebels
 
-- rebels from 1 to 2% moral per tech lvl
+- rebels from 1% to 2% moral per tech lvl
 - rebels from 0.03 to 0.05 size per tech lvl
 - rebels artillery 0.15 to 0.25 when above tech lvl16
 
@@ -41,36 +50,33 @@ patchnote is the difference between vanilla & the mod
 - refuse a call to arm with everyone else : 10 trust (was 5)
 - no land when promised (scale with participation & dev) : 30 trust (was 20)
 - separate peace trust penalty : 15 (was 10)
-
 - improved AI decisionmaking regarding building, inspired by https://github.com/Mxt-dot/BetterAI
 	- generally AI will do more economic buildings, and will improve forts through events. details as follow:
 	- not mentionned building have not been modified, and some specific contextual modifier are not specified here for simplicity
 	- those values are all from BetterAI and might benefit from more iteration
-	- *T1* marketplace 1.5 => 2
+	- **T1** marketplace 1.5 => 2
 	- workshop 1 => 20
 	- temple 1 => 15
 	- barracks 1 => 35
-	- shipyard 1 => 0.2 but *20 if close to max ship
+	- shipyard 1 => 0.2
 	- coastal def 1 => 0.2
-	- *T2* courthouse 1 => 5
+	- **T2** courthouse 1 => 5
 	- dock 1 => 0.2
 	- regimental camp 1 => 15
 	- naval battery 1 => 0.5
-	- *T3* cathedral 1 => 0.3
+	- **T3** cathedral 1 => 0.3
 	- university 1 => 15
 	- trade depot 1.5 => 0.2
 	- grand shipyard 1 => 0.2
 	- training fields 1 => 20
-	- *T4* counting house 1 => 0.5
+	- **T4** counting house 1 => 0.5
 	- town hall 1 => 5
 	- drydock 1 => 0.2
 	- conscription center 1 => 20
 	- manufactory mostly goes from 1 => 20/25/30, depending on goods produced
-	
 - improved AI decisionmaking regarding mana, inspired by https://github.com/Mxt-dot/BetterAI
 	- AI will make institution spawn through events when more than 30years behind and have a enought mana
 	- AI will spend mana to dev province when above 950, also through events
-
 - improved AI decisionmaking regarding estates, inspired by https://github.com/Mxt-dot/BetterAI
 	- ai won't go under 30 crown land, to avoid losing autonomy
 	- ai will sell land twice often when they have a lot of it, so it is safe to do so, and keep economy ok
@@ -87,7 +93,7 @@ patchnote is the difference between vanilla & the mod
 - AE with different religion -0.5 => 0
 - AE distance base 0.75 => 0.25 (should increase ae with far away country)
 - AE from gaining a province with threat (no war) 1 => 0.75
-- peace cost for releasing a nation 1 => 0.75
+- peace cost for releasing a tag 1 => 0.75
 
 
 ### multiplayer QOL
