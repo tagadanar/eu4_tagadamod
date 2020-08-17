@@ -93,6 +93,7 @@ patchnote is the difference between vanilla & the mod
 - AE with different religion -0.5 => 0
 - AE distance base 0.75 => 0.25 (should increase ae with far away country)
 - AE from gaining a province with threat (no war) 1 => 0.75
+- AE increase for attacker scaling to 50% at 500 dev instead of 1k dev
 - peace cost for releasing a tag 1 => 0.75
 
 
