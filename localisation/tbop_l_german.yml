@@ -1,0 +1,22 @@
+﻿l_german:
+
+ total_rival_tt:0 "[Root.tbop_development.GetValue]/[Root.total_rival.GetValue] \n\n total:[Root.total_rival.GetValue]\n"
+ first_rival_tt:0 "Entwicklung: [Root.first_rival.GetValue]\n"
+ second_rival_tt:0 "Entwicklung: [Root.second_rival.GetValue]\n"
+ 
+ tbop_rival_tt:0 "§G[Root.tbop_development.GetValue]/[Root.total_rival.GetValue]§!\n\n§gWird beginnen, wenn unsere Entwicklung (ohne Handelskompanien und mit Ausnahme der Kolonien) die Summe unserer beiden größten Feinde', modifiziert durch die unseres Herrschers £dip£ (+5% pro Punkt). Wenn wir nur einen gültigen Rivalen haben, wird dieser Wert verdoppelt.§!\n\n -Unsere Entwicklung: §Y[Root.tbop_development.GetValue]§!\n\n -Entwicklung der Feinde: §Y[Root.sum_rival.GetValue]§!\n -£dip£ modifizieren: §Yx[Root.mod_dip.GetValue]§!\n -Modifizierter Schwellenwert: §Y[Root.total_rival.GetValue]§!\n"
+ 
+ tbop_rival_stop_tt:0 "§R[Root.tbop_development.GetValue]/[Root.total_rival.GetValue]§!\n\n§gWird aufhören, wenn unsere Entwicklung (mit Ausnahme der Handelsgesellschaften und der Zählung der Untertanen, mit Ausnahme der Kolonien) liegt unter der Summe unserer beiden größten Feinde', modifiziert durch die unseres Herrschers £dip£ (+5% pro Punkt). Wenn wir nur einen gültigen Rivalen haben, wird dieser Wert verdoppelt.§!\n\n -Unsere Entwicklung: §Y[Root.tbop_development.GetValue]§!\n\n -Entwicklung der Feinde: §Y[Root.sum_rival.GetValue]§!\n -£dip£ modifizieren: §Yx[Root.mod_dip.GetValue]§!\n -Modifizierter Schwellenwert: §Y[Root.total_rival.GetValue]§!\n"
+ 
+ tbop.02_title:0 "Gleichgewicht der Kräfte gestört"
+ tbop.02_desc:0 "In den letzten Monaten haben unsere alten Rivalen aus Angst vor unserem Erfolg offen auf unseren Untergang hingearbeitet. In ihrer Eifersucht haben sie unseren engen Nachbarn ihre Furcht und Empörung vor uns eingeflößt. Es scheint jetzt wahrscheinlich, dass eine gemeinsame Feindseligkeitserklärung nur noch eine Frage der Zeit ist."
+ tbop.02.a:0 "Sie sollten in der Tat Angst haben."
+ 
+ tbop_power_balance:0 "Gestörtes Machtgleichgewicht"
+ 
+ DESC_TBOP_POWER_BALANCE_START:0 "§Y[Root.tbop_development.GetValue]/[Root.rival_dev_final.GetValue]§!\n\n Beginnt, wenn unsere Entwicklung (mit der Zählung der Subjekte, mit Ausnahme der Kolonien, aber nicht der Handelsgesellschaften) gleich der Summe der Entwicklung unserer Feinde, modifiziert um einen Faktor, ist:\n -Entwicklungssumme des Feindes: §Y[Root.tbop_rival_development.GetValue]§!\n -Faktor: §Y[Root.rival_dev_mult.GetValue]§! (Basis 0,5, jeweils £dip£ oder £mil£ Punkt ergibt +0,05)\n -Endwert: §Y[Root.rival_dev_final.GetValue]§!\n\n"
+ DESC_TBOP_POWER_BALANCE_STOP:0 "§Y[Root.tbop_development.GetValue]/[Root.rival_dev_final.GetValue]§!\n\n Hört auf, wenn unsere Entwicklung (mit Ausnahme der Kolonien, aber nicht der Handelsgesellschaften) unter der um einen Faktor modifizierten Summe der Entwicklung unserer Feinde liegt:\n - Summe der feindlichen Entwicklung: §Y[Root.tbop_rival_development.GetValue]§!\n -Faktor: §Y[Root.rival_dev_mult.GetValue]§! (Basis 0,5, jeweils £dip£ oder £mil£ Punkt ergibt +0,05)\n -Endgültiger Wert: §Y[Root.rival_dev_final.GetValue]§!\n\n"
+ 
+ tbop_rivals_mobilized:0 "Mobilisierte Feinde"
+ 
+ tbop_tooltip_ae_main:0 " Bekommt §R80§! agressive Expansion."

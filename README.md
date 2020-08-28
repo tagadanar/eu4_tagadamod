@@ -95,7 +95,7 @@ patchnote is the difference between vanilla & the mod
 - AE from gaining a province with threat (no war) 1 => 0.75
 - AE increase for attacker scaling to 50% at 500 dev instead of 1k dev
 - peace cost for releasing a tag 1 => 0.75
-
+- new disaster from https://forum.paradoxplaza.com/forum/threads/mod-the-balance-of-power-reworking-how-rivals-and-neighbors-react-to-expansion-long-term.1400193/
 
 ### multiplayer QOL
 

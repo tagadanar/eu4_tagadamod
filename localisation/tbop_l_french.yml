@@ -1,0 +1,22 @@
+﻿l_french:
+
+ total_rival_tt:0 "[Root.tbop_development.GetValue]/[Root.total_rival.GetValue] \n\n total:[Root.total_rival.GetValue]\n"
+ first_rival_tt:0 "développement: [Root.first_rival.GetValue]\n"
+ second_rival_tt:0 "développement: [Root.second_rival.GetValue]\n"
+ 
+ tbop_rival_tt:0 "§G[Root.tbop_development.GetValue]/[Root.total_rival.GetValue]§!\n\n§gCommencera si notre développement (excepté les compagnies commerciales, en comptant les sujets sauf les colonies) atteint la somme de nos deux plus gros ennemis', modifié par la £dip£ du dirigeant (+5% par point). Si il n'y a qu'un rival valide, sa valeur est doublé.§!\n\n -Notre développement: §Y[Root.tbop_development.GetValue]§!\n\n -Développement adverses: §Y[Root.sum_rival.GetValue]§!\n -Modifié par £dip£: §Yx[Root.mod_dip.GetValue]§!\n -Valeur seuil modifié: §Y[Root.total_rival.GetValue]§!\n"
+ 
+ tbop_rival_stop_tt:0 "§R[Root.tbop_development.GetValue]/[Root.total_rival.GetValue]§!\n\n§gS'arrêtera si notre développement (excepté les compagnies commerciales, en comptant les sujets sauf les colonies) est sous la somme de nos deux plus gros ennemis', modifié par la £dip£ du dirigeant (+5% par point). Si il n'y a qu'un rival valide, sa valeur est doublé.§!\n\n -Notre développement: §Y[Root.tbop_development.GetValue]§!\n\n -Développement adverses: §Y[Root.sum_rival.GetValue]§!\n -Modifié par £dip£: §Yx[Root.mod_dip.GetValue]§!\n -Valeur seuil modifié: §Y[Root.total_rival.GetValue]§!\n"
+ 
+ tbop.02_title:0 "L'équilibre des puissances est perturbé"
+ tbop.02_desc:0 "Ces derniers mois, nos vieux rivaux, effrayés par notre succès, complottent ouvertement contre nous. Dans leurs jalousies, ils ont nourrit nos voisins de leurs rancoeurs. Il semble maintenant qu'une déclaration de guerre commune n'est qu'une question de temps"
+ tbop.02.a:0 "Ils ont raisons d'avoir peur !"
+ 
+ tbop_power_balance:0 "L'équilibre des puissances est perturbé"
+ 
+ DESC_TBOP_POWER_BALANCE_START:0 "§Y[Root.tbop_development.GetValue]/[Root.rival_dev_final.GetValue]§!\n\n Commencera si notre développement (excepté les compagnies commerciales, en comptant les sujets sauf les colonies) atteint la somme de nos deux plus gros ennemis' développement modifié par:\n -Somme du développement de l'ennemi: §Y[Root.tbop_rival_development.GetValue]§!\n -Facteur: §Y[Root.rival_dev_mult.GetValue]§! (0.5 de base, chaque £dip£ ou £mil£ donnent +0.05)\n -Valeur Finale: §Y[Root.rival_dev_final.GetValue]§!\n\n"
+ DESC_TBOP_POWER_BALANCE_STOP:0 "§Y[Root.tbop_development.GetValue]/[Root.rival_dev_final.GetValue]§!\n\n S'arrêtera si notre développement (excepté les compagnies commerciales, en comptant les sujets sauf les colonies) est sous la somme de nos deux plus gros ennemis' développement modifié par:\n -Somme du développement de l'ennemi: §Y[Root.tbop_rival_development.GetValue]§!\n -Factor: §Y[Root.rival_dev_mult.GetValue]§! (0.5 de base, chaque £dip£ ou £mil£ donnent +0.05)\n -Valeur Finale: §Y[Root.rival_dev_final.GetValue]§!\n\n"
+ 
+ tbop_rivals_mobilized:0 "Ennemis Mobilisés"
+ 
+ tbop_tooltip_ae_main:0 " augmente de §R80§! l'expansion agressive."

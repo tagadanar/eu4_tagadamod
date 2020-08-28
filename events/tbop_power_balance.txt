@@ -1,0 +1,554 @@
+namespace = tbop
+
+country_event = { 
+	#tbop_development: current development
+	#tbop_rival_development: rivals development
+	#rival_dev_mult: multiplier
+	#rival_dev_final: final value
+
+	id = tbop.01
+	
+	hidden = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = { 
+		days = 30		
+	}
+	
+	immediate = {
+	#country development
+		
+		export_to_variable = {
+			which = tbop_development
+			value = total_development
+			who = ROOT	
+		}
+		
+		#subtract by TC dev
+		every_owned_province = {
+			limit = {
+				is_owned_by_trade_company = yes
+				NOT = { religion_group = ROOT }
+			}
+			
+			export_to_variable = {
+				which = tbop_development
+				value = development
+			}
+			
+			ROOT = {
+				subtract_variable = {
+					which = tbop_development 
+					which = PREV
+				}
+			}
+		}
+		
+		#add non colonial or tributary subject dev
+		every_country = {
+			limit = {
+				is_subject_of = ROOT
+				NOT = { is_colonial_nation_of = ROOT }
+				NOT = { is_subject_of_type = tributary_state }
+				has_country_flag = tbop_set
+			}
+			
+			ROOT = {
+				change_variable = {
+					which = tbop_development 
+					which = PREV
+				}
+			}
+		}
+		
+		set_variable = { which = tbop_development_triple value = 0 }
+		change_variable = { which = tbop_development_triple which = tbop_development }
+		
+		set_country_flag = tbop_set
+		
+		#rivals development
+		set_variable = {
+			which = first_rival
+			value = 0
+		}
+		set_variable = {
+			which = second_rival
+			value = 0
+		}
+		set_variable = {
+			which = total_rival
+			value = 0
+		}
+		set_variable = {
+			which = sum_rival
+			value = 0
+		}
+		set_variable = {
+			which = mod_dip
+			value = 0
+		}
+		
+		while = {
+			limit = {
+				any_country = { 
+					is_rival = ROOT
+					NOT = { has_country_flag = checked_by@ROOT }
+					has_country_flag = tbop_set
+				}
+			}
+			
+			tbop_rival_calculation = yes
+		}
+		
+		every_country = {
+			limit = { has_country_flag = checked_by@ROOT }
+			
+			clr_country_flag = checked_by@ROOT
+		}
+		
+		change_variable = {
+			which = total_rival
+			which = first_rival
+		}
+		change_variable = {
+			which = total_rival
+			which = second_rival
+		}
+		
+		#save sum value, calculate modifier and multiply total
+		change_variable = { which = sum_rival which = total_rival }
+		
+		export_to_variable = { which = mod_dip value = DIP }
+		divide_variable = { which = mod_dip value = 20 }
+		change_variable = { which = mod_dip value = 1 }
+		
+		multiply_variable = { which = total_rival which = mod_dip }
+		
+		if = {
+			limit = {
+				NOT = {
+					calc_true_if = {
+						all_country = {
+							is_rival = ROOT
+						}
+						amount = 2
+					}
+				}
+			}
+			
+			multiply_variable = { which = total_rival value = 2 }
+		}
+	}		
+	
+	option = {		
+		ai_chance = { factor = 100 }
+	}
+}
+
+country_event = {
+	id = tbop.02
+	title = "tbop.02_title"
+	desc = "tbop.02_desc"
+	picture = BATTLE_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tbop.02.a
+		
+		add_country_modifier = { 
+			name = tbop_rivals_mobilized
+			duration = 9125  
+		}
+		
+		multiply_variable = { which = tbop_development_triple value = 3 }
+		
+		every_country = {
+			
+			limit = {
+				OR = {
+					#ROOT = {	#ROOT rivaled PREV
+					#	is_rival = PREV
+					#}
+					is_rival = ROOT	#THIS rivaled ROOT
+					
+					AND = {
+						is_neighbor_of = ROOT
+						
+						#<3x root's dev
+						NOT = {
+							check_variable = {
+								which = tbop_development_triple
+								which = ROOT
+							}
+						}
+					}
+				}
+			}
+			hidden_effect = {
+			
+				add_opinion = {
+					who = ROOT
+					modifier = aggressive_expansion
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = aggressive_expansion
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = aggressive_expansion
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = aggressive_expansion
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = aggressive_expansion
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = aggressive_expansion
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = aggressive_expansion
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = aggressive_expansion
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = aggressive_expansion
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = aggressive_expansion
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = aggressive_expansion
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = aggressive_expansion
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = aggressive_expansion
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = aggressive_expansion
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = aggressive_expansion
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = aggressive_expansion
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = aggressive_expansion
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = aggressive_expansion
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = aggressive_expansion
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = aggressive_expansion
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = aggressive_expansion
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = aggressive_expansion
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = aggressive_expansion
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = aggressive_expansion
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = aggressive_expansion
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = aggressive_expansion
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = aggressive_expansion
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = aggressive_expansion
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = aggressive_expansion
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = aggressive_expansion
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = aggressive_expansion
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = aggressive_expansion
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = aggressive_expansion
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = aggressive_expansion
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = aggressive_expansion
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = aggressive_expansion
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = aggressive_expansion
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = aggressive_expansion
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = aggressive_expansion
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = aggressive_expansion
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = aggressive_expansion
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = aggressive_expansion
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = aggressive_expansion
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = aggressive_expansion
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = aggressive_expansion
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = aggressive_expansion
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = aggressive_expansion
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = aggressive_expansion
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = aggressive_expansion
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = aggressive_expansion
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = aggressive_expansion
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = aggressive_expansion
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = aggressive_expansion
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = aggressive_expansion
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = aggressive_expansion
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = aggressive_expansion
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = aggressive_expansion
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = aggressive_expansion
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = aggressive_expansion
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = aggressive_expansion
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = aggressive_expansion
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = aggressive_expansion
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = aggressive_expansion
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = aggressive_expansion
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = aggressive_expansion
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = aggressive_expansion
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = aggressive_expansion
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = aggressive_expansion
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = aggressive_expansion
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = aggressive_expansion
+				}
+			}
+			
+		}
+		
+		divide_variable = { which = tbop_development_triple value = 3 }
+	
+		custom_tooltip = tbop_tooltip_ae_main
+	}
+
+}
+
+# country_event = {
+	# id = tbop.03
+	
+	# is_triggered_only = yes
+	
+	# immediate = {
+		# set_variable = {
+			# which = first_rival
+			# value = 0
+		# }
+		# set_variable = {
+			# which = second_rival
+			# value = 0
+		# }
+		# set_variable = {
+			# which = total_rival
+			# value = 0
+		# }
+		
+		# while = {
+			# limit = {
+				# any_country = { 
+					# is_rival = ROOT
+					# NOT = { has_country_flag = checked_by@ROOT }
+				# }
+			# }
+			
+			# tbop_rival_calculation = yes
+		# }
+		
+		# every_country = {
+			# limit = { has_country_flag = checked_by@ROOT }
+			
+			# clr_country_flag = checked_by@ROOT
+		# }
+		
+		# change_variable = {
+			# which = total_rival
+			# which = first_rival
+		# }
+		# change_variable = {
+			# which = total_rival
+			# which = second_rival
+		# }
+		
+	# }
+	
+	# option = {
+		# ai_chance = { factor = 100 }
+	# }
+# }
+
+# country_event = {
+	# id = tbop.04
+	
+	# is_triggered_only = yes
+	
+	# option = {
+		# custom_tooltip = total_rival_tt
+		
+		# random_country = {
+			# limit = { has_country_flag = first_rival@ROOT }
+			# custom_tooltip = first_rival_tt
+		# }
+		
+		# random_country = {
+			# limit = { has_country_flag = second_rival@ROOT }
+			# custom_tooltip = second_rival_tt
+		# }
+	# }
+# }

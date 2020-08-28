@@ -1,0 +1,126 @@
+tbop_power_balance = {
+	potential = {
+		has_country_flag = tbop_set
+		any_country = {
+			is_rival = ROOT
+		}
+		#eastern religions respect the mandate holder's right to be a big boy
+		OR = {
+			NOT = { religion_group = eastern }
+			any_country = {
+				is_rival = ROOT
+				NOT = { religion_group = eastern }
+			}
+			is_emperor_of_china = no
+		}
+	}
+	
+	can_start = {
+		AND = {			
+			# random_country = {
+				# limit = { has_country_flag = first_rival@ROOT }
+				# custom_tooltip = first_rival_tt
+			# }
+		
+			custom_trigger_tooltip = {
+				tooltip = tbop_rival_tt
+				
+				check_variable = {
+					which = tbop_development
+					which = total_rival
+				}
+			}
+			
+			# variable_arithmetic_trigger = {
+				# custom_tooltip = total_rival_tt
+				
+				# random_country = {
+					# limit = { has_country_flag = first_rival@ROOT }
+					# custom_tooltip = first_rival_tt
+				# }
+				
+				# random_country = {
+					# limit = { has_country_flag = second_rival@ROOT }
+					# custom_tooltip = second_rival_tt
+				# }
+				
+				# check_variable = {
+					# which = tbop_development
+					# which = total_rival
+				# }
+			# }
+			
+			NOT = { has_country_modifier = tbop_rivals_mobilized }
+		}
+	}
+	
+	can_stop = {
+		OR = {
+			custom_trigger_tooltip = {
+				tooltip = tbop_rival_stop_tt
+				NOT = {
+					check_variable = {
+						which = tbop_development
+						which = total_rival
+					}
+				}
+			}
+			
+			has_country_modifier = tbop_rivals_mobilized
+		}
+		# variable_arithmetic_trigger = {
+			# custom_tooltip = total_rival_tt
+			
+			# random_country = {
+				# limit = { has_country_flag = first_rival@ROOT }
+				# custom_tooltip = first_rival_tt
+			# }
+			
+			# random_country = {
+				# limit = { has_country_flag = second_rival@ROOT }
+				# custom_tooltip = second_rival_tt
+			# }
+			# NOT = {
+				# check_variable = {
+					# which = tbop_development
+					# which = total_rival
+				# }
+			# }
+		# }
+	}
+	
+	progress = {
+		modifier = {
+			factor = 10
+			always = yes
+		}
+		modifier = {
+			factor = -1
+			diplomatic_reputation = 1
+		}
+		modifier = {
+			factor = -1
+			diplomatic_reputation = 2
+		}
+		modifier = {
+			factor = -1
+			diplomatic_reputation = 3
+		}		
+		modifier = {
+			factor = -1
+			diplomatic_reputation = 4
+		}
+		modifier = {
+			factor = -1
+			diplomatic_reputation = 5
+		}		
+	}
+	
+	can_end = {
+		always = yes
+	}
+	
+	
+	on_start = tbop.02
+}
+

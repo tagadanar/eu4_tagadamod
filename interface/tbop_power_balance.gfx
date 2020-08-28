@@ -1,0 +1,8 @@
+spriteTypes = {
+ spriteType = {
+  name = "GFX_disaster_tbop_power_balance"
+  texturefile = "gfx//interface//disasters//tbop_power_balance.dds"
+  noOfFrames = 3
+  loadType = "INGAME"
+ }
+}

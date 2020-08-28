@@ -1,0 +1,22 @@
+﻿l_english:
+
+ total_rival_tt:0 "[Root.tbop_development.GetValue]/[Root.total_rival.GetValue] \n\n total:[Root.total_rival.GetValue]\n"
+ first_rival_tt:0 "development: [Root.first_rival.GetValue]\n"
+ second_rival_tt:0 "development: [Root.second_rival.GetValue]\n"
+ 
+ tbop_rival_tt:0 "§G[Root.tbop_development.GetValue]/[Root.total_rival.GetValue]§!\n\n§gWill start if our development (excluding Trade Companies and counting subjects, except colonies) reaches the sum of our two biggest enemies', modified by our ruler's £dip£ (+5% per point). If we have only one valid rival, that value is doubled.§!\n\n -Our development: §Y[Root.tbop_development.GetValue]§!\n\n -Enemies' development: §Y[Root.sum_rival.GetValue]§!\n -£dip£ modifier: §Yx[Root.mod_dip.GetValue]§!\n -Modified threshold value: §Y[Root.total_rival.GetValue]§!\n"
+ 
+ tbop_rival_stop_tt:0 "§R[Root.tbop_development.GetValue]/[Root.total_rival.GetValue]§!\n\n§gWill stop if our development (excluding Trade Companies and counting subjects, except colonies) is below the sum of our two biggest enemies', modified by our ruler's £dip£ (+5% per point). If we have only one valid rival, that value is doubled.§!\n\n -Our development: §Y[Root.tbop_development.GetValue]§!\n\n -Enemies' development: §Y[Root.sum_rival.GetValue]§!\n -£dip£ modifier: §Yx[Root.mod_dip.GetValue]§!\n -Modified threshold value: §Y[Root.total_rival.GetValue]§!\n"
+ 
+ tbop.02_title:0 "Balance Of Powers Disturbed"
+ tbop.02_desc:0 "For the past several months, our old rivals, in fear of our success, have been openly plotting for our downfall. In their jealously, they have fed our close neighbors their fear and outrage of us. It seems likely now that a joint declaration of hostilities is only a matter of time."
+ tbop.02.a:0 "They should indeed be afraid."
+ 
+ tbop_power_balance:0 "Balance of Power Disturbed"
+ 
+ DESC_TBOP_POWER_BALANCE_START:0 "§Y[Root.tbop_development.GetValue]/[Root.rival_dev_final.GetValue]§!\n\n Will start if our development (counting subjects, except colonies, but not trade companies) equals the sum of our enemies' development modified by a factor:\n -Enemy development sum: §Y[Root.tbop_rival_development.GetValue]§!\n -Factor: §Y[Root.rival_dev_mult.GetValue]§! (base 0.5, each £dip£ or £mil£ point gives +0.05)\n -Final Value: §Y[Root.rival_dev_final.GetValue]§!\n\n"
+ DESC_TBOP_POWER_BALANCE_STOP:0 "§Y[Root.tbop_development.GetValue]/[Root.rival_dev_final.GetValue]§!\n\n Will stop if our development (counting subjects, except colonies, but not trade companies) is below the sum of our enemies' development modified by a factor:\n -Enemy development sum: §Y[Root.tbop_rival_development.GetValue]§!\n -Factor: §Y[Root.rival_dev_mult.GetValue]§! (base 0.5, each £dip£ or £mil£ point gives +0.05)\n -Final Value: §Y[Root.rival_dev_final.GetValue]§!\n\n"
+ 
+ tbop_rivals_mobilized:0 "Mobilized Enemies"
+ 
+ tbop_tooltip_ae_main:0 " Gain §R80§! agressive expansion."

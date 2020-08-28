@@ -1,0 +1,97 @@
+tbop_rival_calculation = {
+	random_country = {
+		limit = {
+			is_rival = ROOT
+			NOT = { has_country_flag = checked_by@ROOT }
+			has_country_flag = tbop_set
+		}
+		
+		set_variable = {
+			which = temp
+			value = 0
+		}
+		change_variable = {
+			which = temp
+			which = tbop_development
+		}
+
+		
+		PREV = {
+			set_variable = {
+				which = temp
+				value = 0
+			}
+			change_variable = {
+				which = temp
+				which = PREV
+			}
+			
+			if = {
+				limit = { 
+					check_variable = { which = temp which = first_rival }
+				}
+				
+				#clear current 2nd
+				set_variable = {
+					which = second_rival
+					value = 0
+				}
+				random_country = {
+					limit = { has_country_flag = second_rival@ROOT }
+					clr_country_flag = second_rival@ROOT
+				}
+				
+				#move current 1st to 2nd and clear 1st
+				change_variable = {
+					which = second_rival
+					which = first_rival
+				}
+				set_variable = {
+					which = first_rival
+					value = 0
+				}
+				random_country = {
+					limit = { has_country_flag = first_rival@ROOT }
+					clr_country_flag = first_rival@ROOT
+					set_country_flag = second_rival@ROOT
+				}
+				
+				#set new 1st
+				change_variable = {
+					which = first_rival
+					which = temp
+				}
+				PREV = {
+					set_country_flag = first_rival@ROOT
+				}
+			}
+			else_if = {
+				limit = { 
+					check_variable = { which = temp which = second_rival }
+				}
+				
+				#clear current 2nd
+				set_variable = {
+					which = second_rival
+					value = 0
+				}
+				random_country = {
+					limit = { has_country_flag = second_rival@ROOT }
+					clr_country_flag = second_rival@ROOT
+				}
+				
+				#set current 2nd
+				change_variable = {
+					which = second_rival
+					which = temp
+				}
+				PREV = {
+					set_country_flag = second_rival@ROOT
+				}
+			}
+		
+		}
+		
+		set_country_flag = checked_by@ROOT
+	}
+}

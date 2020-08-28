@@ -1,0 +1,222 @@
+namespace = tbop
+
+country_event = { 
+	id = tbop.01
+	
+	hidden = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	mean_time_to_happen = { 
+		days = 30		
+	}
+	
+	immediate = {
+	#country development
+		
+		export_to_variable = {
+			which = tbop_development
+			value = total_development
+			who = ROOT	
+		}
+		
+		#subtract by TC dev
+		every_owned_province = {
+			limit = {
+				is_owned_by_trade_company = yes
+			}
+			
+			export_to_variable = {
+				which = tbop_development
+				value = development
+			}
+			
+			ROOT = {
+				subtract_variable = {
+					which = tbop_development 
+					which = PREV
+				}
+			}
+		}
+		
+		#add non colonial or tributary subject dev
+		every_country = {
+			limit = {
+				is_subject_of = ROOT
+				NOT = { is_colonial_nation_of = ROOT }
+				NOT = { is_subject_of_type = tributary_state }
+				has_country_flag = tbop_set
+			}
+			
+			ROOT = {
+				change_variable = {
+					which = tbop_development 
+					which = PREV
+				}
+			}
+		}
+		
+		export_to_variable = {
+			which = temp
+			value = tbop_development
+			who = ROOT	
+		}
+		
+		set_country_flag = tbop_set
+		
+		#rivals development
+		set_variable = {
+			which = temp
+			value = 0
+		}
+		
+		every_country = {
+			limit = {
+				is_rival = ROOT
+				has_country_flag = tbop_set
+			}
+			
+			ROOT = {
+				change_variable = {
+					which = temp 
+					which = PREV
+				}
+			}
+		}
+
+		export_to_variable = {
+			which = tbop_rival_development
+			value = temp
+			who = ROOT	
+		}
+		
+		export_to_variable = {
+			which = temp
+			value = tbop_development
+			who = ROOT	
+		}
+	}		
+	
+	option = {		
+		ai_chance = { factor = 100 }
+	}
+}
+
+country_event = { 
+	id = tbop.02
+	
+	hidden = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	
+		set_variable = {
+			which = temp
+			value = 0
+		}
+		change_variable = {
+			which = temp 
+			which = tbop_development
+		}
+	
+		FROM = {
+		
+			set_variable = {
+				which = temp
+				value = 0
+			}
+			change_variable = {
+				which = temp 
+				which = ROOT
+			}
+			
+			country_event = { 
+				id = tbop.03
+			}
+			
+			
+		}
+	}		
+	
+	option = {		
+		ai_chance = { factor = 100 }
+	}
+}
+
+country_event = { 
+	id = tbop.03
+	
+	hidden = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	
+		if = {
+			limit = { 
+				check_variable = { 
+					which = temp 
+					which = tbop_enemy2dev 
+				} 
+			}
+			
+			
+			if = {
+				limit = { 
+					check_variable = { 
+						which = temp 
+						which = tbop_enemy1dev 
+					} 
+				}
+				
+				
+				export_to_variable = {
+					which = tbop_enemy2dev
+					value = tbop_enemy1dev
+				}
+				export_to_variable = {
+					which = tbop_enemy1dev
+					value = temp
+				}
+			}
+			else = {
+				export_to_variable = {
+					which = tbop_enemy2dev
+					value = temp
+				}
+			}
+		}
+		
+		export_to_variable = {
+			which = tbop_total
+			value = tbop_enemy1dev
+		}
+		change_variable = {
+			which = tbop_total
+			which = tbop_enemy2dev
+		}
+	}		
+	
+	option = {		
+		ai_chance = { factor = 100 }
+	}
+}
+
+
+
+country_event = { #nobles
+	id = tbop.99
+	
+	desc = "tbop.02_desc"
+	picture = CITY_VIEW_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		
+		ai_chance = { factor = 100 }
+	}
+}
