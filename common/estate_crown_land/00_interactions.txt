@@ -494,6 +494,18 @@ interaction = {
 				}
 			}
 		}
+		#modifier = {
+			#factor = 0 # prevent stability crush from deloyal estate
+			#AND = { # TODO TEST THIS SHIT §§§§
+				#stability = 1
+				#NOT = {
+					#estate_loyalty = {
+						#estate = all
+						#loyalty = 60
+					#}
+				#}
+			#}
+		#}
 		modifier = {
 			factor = 0.75
 			NOT = { num_of_owned_areas = 2 }

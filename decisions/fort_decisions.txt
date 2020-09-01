@@ -1,0 +1,437 @@
+country_decisions = {
+	fort2_click = {
+		major = yes
+		potential = {
+			ai = yes
+			is_at_war = no
+			mil_tech = 14
+			treasury = 300
+			monthly_income = 10
+			current_income_balance = 2
+			NOT = {
+				num_of_loans = 3
+			}
+			calc_true_if = {
+				all_owned_province = {
+					is_state_core = THIS
+					has_building = fort_15th
+					NOT = {
+						construction_progress = 0.01
+					}
+				}
+				amount = 1
+			}
+		}
+		allow = {
+
+		}
+		effect = {
+			hidden_effect = {
+				random_owned_province = {
+					limit = {
+						is_state_core = THIS
+						has_building = fort_15th
+						NOT = {
+							construction_progress = 0.01
+						}
+					}
+					add_building_construction = {
+						building = fort_16th
+						speed = 1.0
+						cost = 1.0
+					}
+				}
+			}
+			log = "[This.GetName] upgraded fort 2 to fort 4"
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+	}
+
+	fort4_click = {
+		major = yes
+		potential = {
+			ai = yes
+			is_at_war = no
+			mil_tech = 19
+			treasury = 300
+			current_income_balance = 2
+			monthly_income = 10
+			NOT = {
+				num_of_loans = 3
+			}
+			calc_true_if = {
+				all_owned_province = {
+					is_state_core = THIS
+					has_building = fort_16th
+					NOT = {
+						construction_progress = 0.01
+					}
+					
+				}
+				amount = 1
+			}
+		}
+
+		allow  = {
+
+		}
+		effect = {
+			hidden_effect = {
+				random_owned_province = {
+					limit = {
+						is_state_core = THIS
+						has_building = fort_16th
+						NOT = {
+							construction_progress = 0.01
+						}
+					}
+					add_building_construction = {
+						building = fort_17th
+						speed = 1.0
+						cost = 1.0
+					}
+				}
+			}
+			log = "[This.GetName] upgraded fort 4 to fort 6"
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+	}
+
+	fort6_click = {
+		major = yes
+		potential = {
+			ai = yes
+			is_at_war = no
+			mil_tech = 24
+			treasury = 300
+			current_income_balance = 2
+			monthly_income = 10
+			NOT = {
+				num_of_loans = 3
+			}
+			calc_true_if = {
+				all_owned_province = {
+					is_state_core = THIS
+					has_building = fort_17th
+					NOT = {
+						construction_progress = 0.01
+					}
+				}
+				amount = 1
+			}
+		}
+
+		allow = {
+
+		}
+		effect = {
+			hidden_effect = {
+				random_owned_province = {
+					limit = {
+						is_state_core = THIS
+						has_building = fort_17th
+						NOT = {
+							construction_progress = 0.01
+						}
+					}
+					add_building_construction = {
+						building = fort_18th
+						speed = 1.0
+						cost = 1.0
+					}
+				}
+			}
+			log = "[This.GetName] upgraded fort 6 to fort 8"
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+	}
+
+	fortcapital_click = {
+		major = yes
+		potential = {
+			ai = yes
+			is_at_war = no
+			treasury = 300
+			current_income_balance = 2
+			monthly_income = 10
+			NOT = {
+				num_of_loans = 3
+			}
+			calc_true_if = {
+				capital_scope = {
+					OR = { 
+						AND = {
+							NOT = {
+								has_building = fort_15th
+							}
+							NOT = {
+								construction_progress = 0.01
+							}
+						}
+						
+						
+						AND = {
+							ROOT = {
+								AND = {
+									mil_tech = 14
+									NOT = {
+										mil_tech = 19
+									}
+								}
+							}	
+							NOT = {
+								has_building = fort_16th
+							}
+						}
+						AND = {
+							ROOT = {
+								AND = {
+									mil_tech = 19
+									NOT = {
+										mil_tech = 24
+									}
+								}		
+							}
+							NOT = {
+								has_building = fort_17th
+							}
+						}
+						AND = {
+							ROOT = {
+								mil_tech = 24
+							}
+							NOT = {
+								has_building = fort_18th
+							}
+						}
+					}
+				}
+				amount = 1
+			}
+		}
+
+		allow = {
+
+		}
+		effect = {
+			hidden_effect = {
+				capital_scope = {
+					if = {
+						limit = {
+							ROOT = {
+								NOT = {
+									mil_tech = 14
+								}
+							}
+							NOT = {
+								has_building = fort_15th
+							}
+							NOT = {
+								construction_progress = 0.01
+							}
+						}
+						add_building_construction = {
+							building = fort_15th
+							speed = 1.0
+							cost = 1.0
+						}
+					}
+	
+					if = {
+						limit = {
+							ROOT = {
+								AND = {
+									mil_tech = 14
+									NOT = {
+										mil_tech = 19
+									}
+								}
+							}
+							NOT = {
+								has_building = fort_16th
+							}
+							NOT = {
+								construction_progress = 0.01
+							}
+						}
+						add_building_construction = {
+							building = fort_16th
+							speed = 1.0
+							cost = 1.0
+						}
+					}
+	
+					if = {
+						limit = {
+							ROOT = {
+								AND = {
+									mil_tech = 19
+									NOT = {
+										mil_tech = 24
+									}
+								}
+							}
+							NOT = {
+								has_building = fort_17th
+							}
+							NOT = {
+								construction_progress = 0.01
+							}
+						}
+						add_building_construction = {
+							building = fort_17th
+							speed = 1.0
+							cost = 1.0
+						}
+					}
+	
+					if = {
+						limit = {
+							ROOT = {
+								mil_tech = 24
+							}
+							NOT = {
+								has_building = fort_18th
+							}
+							NOT = {
+								construction_progress = 0.01
+							}
+						}
+						add_building_construction = {
+							building = fort_18th
+							speed = 1.0
+							cost = 1.0
+						}
+					}
+				}
+			}
+			log = "[This.GetName] upgraded fort capital"
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+	}
+
+	fortarea_click = { # check for zone of control. scopes to province X with a fort (fortX), but cares about building a fort for following scenario:
+	 # fortX - Y - Z - POTENTIALfortA
+		major = yes
+		potential = {
+			ai = yes
+			is_at_war = no
+			treasury = 300
+			current_income_balance = 2
+			monthly_income = 10
+			NOT = {
+				num_of_loans = 3
+			}
+			calc_true_if = {
+				all_owned_province = { # check all our provinces
+					NOT = {
+						fort_level = 1 # which have no fort
+					}
+					NOT = {
+						construction_progress = 0.01 # where nothing is being built in
+					}
+					NOT = {
+						calc_true_if = {
+							OR = {
+								calc_true_if = {
+									all_neighbor_province = {
+										fort_level = 1
+										is_core = ROOT
+									}
+									amount = 1
+								}
+								calc_true_if = {
+									all_neighbor_province = {
+										NOT = {
+											fort_level = 1
+										}
+										is_core = ROOT
+										calc_true_if = {
+											all_neighbor_province = {
+												fort_level = 1
+												is_core = ROOT
+											}
+											amount = 1
+										}
+									}
+									amount = 1
+								}
+							}
+							amount = 1
+						}
+					}
+				}
+				amount = 1
+			}
+		}
+		allow  = {
+
+		}
+
+		effect = {
+			hidden_effect = {
+				random_owned_province = {
+					limit = {
+						NOT = {
+							fort_level = 1 # all our owned provinces with forts
+						}
+						NOT = {
+							construction_progress = 0.01
+						}
+						NOT = {
+							calc_true_if = {
+								OR = {
+									calc_true_if = {
+										all_neighbor_province = {
+											fort_level = 1
+											is_core = ROOT
+										}
+										amount = 1
+									}
+									calc_true_if = {
+										all_neighbor_province = {
+											NOT = {
+												fort_level = 1
+											}
+											is_core = ROOT
+											calc_true_if = {
+												all_neighbor_province = {
+													fort_level = 1
+													is_core = ROOT
+												}
+												amount = 1
+											}
+										}
+										amount = 1
+									}
+								}
+								amount = 1
+							}
+						}
+					}
+					add_building_construction = {
+						building = fort_15th
+						speed = 1.0
+						cost = 1.0
+					}
+				}
+				log = "[This.GetName] covered an area with a level 2 fort"
+			}
+		}
+		ai_will_do = {
+			factor = 400
+		}
+	}
+}

@@ -36,7 +36,7 @@ marketplace = {
 	}
 
 	ai_will_do = {
-		factor = 2.0 # Because hard-coded AI only considers what it will gain, not what its enemies will lose.
+		factor = 10.0 # Because hard-coded AI only considers what it will gain, not what its enemies will lose.
 	}
 }
 
@@ -50,7 +50,16 @@ workshop = {
 	allow_in_gold_provinces = no
 
 	ai_will_do = {
-		factor = 20.0
+		factor = 80.0
+		modifier = {
+			factor = 1000
+			FROM = {
+				treasury = 1000
+				NOT = {
+					num_of_loans = 5
+				}
+			}
+		}
 	}
 }
 
@@ -98,6 +107,17 @@ barracks = {
 
 	ai_will_do = {
 		factor = 35.0
+		modifier = {
+			factor = 200
+			FROM  = {
+				OR = {
+					NOT = {
+						manpower_percentage = 5
+					}
+					treasury = 1000
+				}
+			}
+		}
 	}
 }
 
@@ -249,10 +269,13 @@ regimental_camp = {
 #	}
 
 	ai_will_do = {
-		factor = 15.0
+		factor = 12.0
 		modifier = {
 			factor = 215 # Little above build cost
-			FROM = { army_size_percentage = 0.95 }
+			FROM = { 
+				army_size_percentage = 0.95
+				current_income_balance = 15
+			}
 		}
 		modifier = {
 			factor = 4.0
@@ -459,6 +482,18 @@ training_fields = {
 
 	ai_will_do = {
 		factor = 20.0
+		modifier = {
+			factor = 100
+			FROM = {
+				OR = {
+					NOT = {
+						manpower_percentage = 5
+					}
+					treasury = 1000
+				}
+				
+			}
+		}
 	}
 }
 
@@ -617,7 +652,7 @@ conscription_center = {
 	ai_will_do = {
 		factor = 20.0
 		modifier = {
-			factor = 435 # Little above build cost
+			factor = 1000 # Little above build cost
 			FROM = { army_size_percentage = 0.95 }
 		}
 		modifier = {
