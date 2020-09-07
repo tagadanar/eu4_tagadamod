@@ -83,3 +83,7 @@ NDefines.NDiplomacy.PEACE_COST_RELEASE_ANNEXED = 0.75 -- 1 -- Release annexed na
 
 -- goal is to add more intervention during wars between great power
 NDefines.NDiplomacy.NUM_OF_GREAT_POWERS = 10 -- 8
+
+-- moar diplo play
+NDefines.NDiplomacy.VASSALIZE_BASE_DEVELOPMENT_CAP = 300 -- 100	Countries with more total development than this cannot be vassalized.
+NDefines.NDiplomacy.MARCH_BASE_DEVELOPMENT_CAP = 600 -- 200

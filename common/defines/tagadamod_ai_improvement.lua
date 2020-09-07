@@ -3,11 +3,11 @@
 
 -- IA improvment :
 -- slightly lowering engagement limit, making it harder to stay sieging when close to ia stacks without them doing anything to defend
-NDefines.NAI.ACCEPTABLE_BALANCE_DEFAULT = 1.5 -- 1.7 -- AI wants this advantage to enter battles typically. (There are some exceptions, e.g. offensives.)
+NDefines.NAI.ACCEPTABLE_BALANCE_DEFAULT = 1.3 -- 1.7 -- AI wants this advantage to enter battles typically. (There are some exceptions, e.g. offensives.)
 -- NDefines.NAI.ACCEPTABLE_BALANCE_FRIEND_IN_COMBAT = 0.75 -- for info, think this value is ok.
 
 -- testing pressthemfurther ftm
--- NDefines.NAI.PRESS_THEM_FURTHER = 1 -- 0 -- TODO TEST This makes AI that has been promised land require that the enemy is pressed further if they think it is possible. Set to 1 to activate.
+-- NDefines.NAI.PRESS_THEM_FURTHER = 1 -- 0 -- DO NOT SET TO 1, THIS MAKE GAME CRASH AFTER 5year -- This makes AI that has been promised land require that the enemy is pressed further if they think it is possible. Set to 1 to activate.
 -- ia will forget less when you enter in the fog, making it a little harder to trap ia
 NDefines.NAI.FOG_OF_WAR_FORGET_CHANCE = 0.5 -- 1 -- Daily percentage chance of AI forgetting a unit that's hidden in Fog of War.
 
