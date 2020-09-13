@@ -33,54 +33,13 @@ patchnote is the difference between vanilla & the mod
 
 ### AI improvement
 
+Almost everything from BetterAI mod (https://github.com/Mxt-dot/BetterAI) and this :
 - added 1 diplo slot for ias only
-- acceptable balance for ia entering battle from 1.7 to 1.5
-- halved ia forget chance in fog of war
-- doubled ia opportunism against hated/weak country
-- ia now double artillery at techlvl 13 instead of 11
-- 150 => 250 diplomatic interest dist
-- 100 => 150 conquest interest dist
-- 100 => 150 pursue dist in war
-- 0.005 to 0.010 excessive demand factor in peace offer
-- 20 to 30 excessive demand threshold in peace offer
-- 0.5 to 0.75 force balance perception factor of other countries who are involved in a different war with either side
-- dishonorable peace from 12 to 18 month
 - peace is dishonorable when having more than -15 (instead of original -10)
 - refuse a call to arm with caller : 30 trust (was 20)
 - refuse a call to arm with everyone else : 10 trust (was 5)
 - no land when promised (scale with participation & dev) : 30 trust (was 20)
 - separate peace trust penalty : 15 (was 10)
-- improved AI decisionmaking regarding building, inspired by https://github.com/Mxt-dot/BetterAI
-	- generally AI will do more economic buildings, and will improve forts through events. details as follow:
-	- not mentionned building have not been modified, and some specific contextual modifier are not specified here for simplicity
-	- those values are all from BetterAI and might benefit from more iteration
-	- **T1** marketplace 1.5 => 2
-	- workshop 1 => 20
-	- temple 1 => 15
-	- barracks 1 => 35
-	- shipyard 1 => 0.2
-	- coastal def 1 => 0.2
-	- **T2** courthouse 1 => 5
-	- dock 1 => 0.2
-	- regimental camp 1 => 15
-	- naval battery 1 => 0.5
-	- **T3** cathedral 1 => 0.3
-	- university 1 => 15
-	- trade depot 1.5 => 0.2
-	- grand shipyard 1 => 0.2
-	- training fields 1 => 20
-	- **T4** counting house 1 => 0.5
-	- town hall 1 => 5
-	- drydock 1 => 0.2
-	- conscription center 1 => 20
-	- manufactory mostly goes from 1 => 20/25/30, depending on goods produced
-- improved AI decisionmaking regarding mana, inspired by https://github.com/Mxt-dot/BetterAI
-	- AI will make institution spawn through events when more than 30years behind and have a enought mana
-	- AI will spend mana to dev province when above 950, also through events
-- improved AI decisionmaking regarding estates, inspired by https://github.com/Mxt-dot/BetterAI
-	- ai won't go under 30 crown land, to avoid losing autonomy
-	- ai will sell land twice often when they have a lot of it, so it is safe to do so, and keep economy ok
-	- ai will almost always seize land if they can do it without getting under 30 loyalty
 
 ### diplomacy & aggresive expansion
 
