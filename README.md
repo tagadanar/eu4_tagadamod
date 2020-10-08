@@ -28,7 +28,7 @@ patchnote is the difference between vanilla & the mod
 
 ### buildings
 
-- coastal_defence lvl1 improved: now deals 1% attrition
+- coastal_defence lvl1 improved: now deals 2% attrition
 - ramparts improved: now also add 1 fort lvl
 
 ### AI improvement
