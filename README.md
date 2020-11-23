@@ -6,9 +6,8 @@ patchnote is the difference between vanilla & the mod
 
 ## patchnote
 
-- 10% to 5% for admin_efficiency & dev_efficiency at admin tech 17, 23, 27
 - removed coring delay with absolutism
-- added 2 greatpower slot, gaining 8 & 5 powerprojection respectively
+- added 4 greatpower slot, gaining 8, 6, 4 and 2 powerprojection respectively
 - spy tech now unlocked every two lvl after lvl 3, except for libertydesire & admin_infiltration
 	- may_steal_maps 6 => 5
 	- may_study_technology 9 => 7
@@ -19,6 +18,9 @@ patchnote is the difference between vanilla & the mod
 	- may_corrupt_officials 24 => 17
 	- may_agitate_for_liberty 27 => 24
 	- may_infiltrate_administration 30 => 27
+- now 10 doctrines slots, for adm lvl 4, 6, 9, and every 3 lvl until 30
+- rebalanced some doctrines and policies, slighly lowered discipline amout ingame
+- rebalanced advisor and their abilities
 
 ### rebels
 
@@ -36,25 +38,28 @@ patchnote is the difference between vanilla & the mod
 Almost everything from BetterAI mod (https://github.com/Mxt-dot/BetterAI) and this :
 - added 1 diplo slot for ias only
 - peace is dishonorable when having more than -15 (instead of original -10)
-- refuse a call to arm with caller : 30 trust (was 20)
+- refuse a call to arm with caller : 35 trust (was 20)
 - refuse a call to arm with everyone else : 10 trust (was 5)
-- no land when promised (scale with participation & dev) : 30 trust (was 20)
-- separate peace trust penalty : 15 (was 10)
+- no land when promised (scale with participation & dev) : 35 trust (was 20)
+- separate peace trust penalty : 20 (was 10)
 
 ### diplomacy & aggresive expansion
 
-- scaled truce from 10 to 15 year at 100% warscore
+- ~scaled truce from 10 to 15 year at 100% warscore~
 - revanchism decay from 100% in 10y to 100% in 15years
-- warcost for enemy not called into war : 2 => 3
+- ~warcost for enemy not called into war : 2 => 3~
 - aggresive expansion (AE) for enemy not called : 1.5 => 2
 - AE with infidel conquest 0.25 => 0.3
 - AE with same religion group 0 => 0.15
 - AE with different religion -0.5 => 0
-- AE distance base 0.75 => 0.25 (should increase ae with far away country)
+- AE distance base 0.75 => 0.5 (should increase ae with more far away country)
 - AE from gaining a province with threat (no war) 1 => 0.75
 - AE increase for attacker scaling to 50% at 500 dev instead of 1k dev
 - peace cost for releasing a tag 1 => 0.75
 - new disaster from https://forum.paradoxplaza.com/forum/threads/mod-the-balance-of-power-reworking-how-rivals-and-neighbors-react-to-expansion-long-term.1400193/
+- can diplo vassalise up to 300dev country (was 100)
+- can make a march until 600dev country (was 200)
+
 
 ### multiplayer QOL
 
