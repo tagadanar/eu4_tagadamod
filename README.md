@@ -21,6 +21,12 @@ patchnote is the difference between vanilla & the mod
 - now 10 doctrines slots, for adm lvl 4, 6, 9, and every 3 lvl until 30
 - rebalanced some doctrines and policies, slighly lowered discipline amout ingame
 - rebalanced advisor and their abilities
+- integrated "the internal balance" mod with slightly twicked values: https://forum.paradoxplaza.com/forum/threads/mod-the-internal-balance-a-stability-and-factions-overhaul.1400191/
+	- all country have at least 2 estates (like merchant repu have nobles & merchants)
+	- estate disloyal when under 40loyalty, still need less than 30 to spawn rebels
+	- estate loyalty and influence, leader stats and faction for repu influence stability gaining
+	- reduce inflation and reduce war exhaustion are now over time (2year modifier, so can't stack multiple time), giving priviledge to an estate
+	- strenghten gouv is an estate interraction overtime (5year modifier, can't stack)
 
 ### rebels
 
