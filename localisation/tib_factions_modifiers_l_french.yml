@@ -1,0 +1,34 @@
+﻿l_french: 
+ tib_adm_a:0 "Nomination basé sur la Performance"
+ tib_dip_a:0 "Nomination basé sur les Donations"
+ tib_mil_a:0 "Nomination basé sur la Propriété"
+
+ tib_adm_b:0 "Promotion des Produits Nationnaux à l'Etranger"
+ tib_dip_b:0 "Promotion des Relations Commerciales"
+ tib_mil_b:0 "Promotion de la Culture et la Tradition"
+
+ tib_adm_c:0 "Focus sur le moral"
+ tib_dip_c:0 "Focus sur la flotte"
+ tib_mil_c:0 "Focus sur la discipline"
+ 
+ tib_small_trade_income:0 "Propotion du revenu commercial faible"
+ tib_moderate_trade_income:0 "Propotion du revenu commercial moyenne"
+ tib_large_trade_income:0 "Propotion du revenu commercial importante"
+ tib_dominant_trade_income:0 "Propotion du revenu commercial dominante"
+ 
+ tib_small_production_income:0 "Propotion de la production faible"
+ tib_moderate_production_income:0 "Propotion de la production moyenne"
+ tib_large_production_income:0 "Propotion de la production importante"
+ tib_dominant_production_income:0 "Propotion de la production dominante"
+ 
+ tib_coalition_guilds:0 "Former une coalition avec les Corporatistes.\nEn conséquence, leur ordre ne sera plus déloyal, mais aura plus d'influence ."
+ tib_coalition_jacobins:0 "Former une coalition avec les Jacobins.\nEn conséquence, leur ordre ne sera plus déloyal, mais aura plus d'influence."
+ tib_coalition_buccaneers:0 "Former une coalition avec les Boucaniers.\nEn conséquence, leur ordre ne sera plus déloyal, mais aura plus d'influence."
+ 
+ tib_coalition_traders:0 "Former une coalition avec les Marchants.\nEn conséquence, leur ordre ne sera plus déloyal, mais aura plus d'influence."
+ tib_coalition_royalists:0 "Former une coalition avec les Royalistes.\nEn conséquence, leur ordre ne sera plus déloyal, mais aura plus d'influence."
+ tib_coalition_smugglers:0 "Former une coalition avec les Contrebandiers.\nEn conséquence, leur ordre ne sera plus déloyal, mais aura plus d'influence."
+ 
+ tib_coalition_aristocrats:0 "Former une coalition avec les Aristocrates.\nEn conséquence, leur ordre ne sera plus déloyal, mais aura plus d'influence."
+ tib_coalition_girondists:0 "Former une coalition avec les Girondins.\nEn conséquence, leur ordre ne sera plus déloyal, mais aura plus d'influence."
+ tib_coalition_captains:0 "Former une coalition avec les Captaines.\nEn conséquence, leur ordre ne sera plus déloyal, mais aura plus d'influence."

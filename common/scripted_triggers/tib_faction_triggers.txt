@@ -1,0 +1,36 @@
+faction_with_power = {
+	faction_in_power = $FACTION$
+	faction_influence = { 
+		faction = $FACTION$
+		influence = $INF$
+	} 
+}
+
+faction_is_ruler = {
+	OR = {
+		AND = { 
+			has_ruler_flag = ruler_is_adm
+			OR = {
+				faction_in_power = mr_guilds
+				faction_in_power = rr_jacobins
+				faction_in_power = pr_buccaneers
+			}
+		}
+		AND = { 
+			has_ruler_flag = ruler_is_dip
+			OR = {
+				faction_in_power = mr_traders
+				faction_in_power = rr_royalists
+				faction_in_power = pr_smugglers
+			}
+		}
+		AND = { 
+			has_ruler_flag = ruler_is_mil
+			OR = {
+				faction_in_power = mr_aristocrats
+				faction_in_power = rr_girondists
+				faction_in_power = pr_captains
+			}
+		}
+	}
+}

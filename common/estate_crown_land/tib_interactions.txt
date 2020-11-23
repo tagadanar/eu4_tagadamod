@@ -1,0 +1,25 @@
+interaction = {
+    key = tib_str_gov_interaction
+    random_seed = crown_land_share
+	cooldown_months = 60
+
+    trigger = {
+        NOT = { has_country_modifier = tib_str_gov }
+		mil_power = 100
+    }
+    effect = {
+		add_mil_power = -100
+		add_country_modifier = {
+			name = tib_str_gov
+			duration = 1825
+		}
+    }
+	ai_will_do = {
+		factor = 0
+		modifier = {
+			factor = 0
+			always = yes
+		}
+	}
+}
+

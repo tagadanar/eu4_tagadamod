@@ -1,0 +1,709 @@
+
+
+
+
+stability_monthly = {
+	if = { limit = { has_country_flag = stab_set }
+	
+		#absolutism
+		absolutism_monthly_calc = yes
+		
+		 #from 0 to -50%, 1 to 0.5
+		set_variable = { which = absol_estates value = 200 }
+		subtract_variable = { which = absol_estates which = tib_absolutism }
+		divide_variable = { which = absol_estates value = 200 }
+		
+		 #from 0 to +50%, 1 to 2
+		set_variable = { which = absol_mana value = 100 }
+		change_variable = { which = absol_mana which = tib_absolutism }
+		divide_variable = { which = absol_mana value = 100 }
+		
+	
+		#monthly increase
+		set_variable = { which = prog_current_stab value = 0 }
+		set_variable = { which = num_estates value = 0 }
+		set_variable = { which = total_estates value = 0 }
+		set_variable = { which = prog_mana value = 0 }
+		set_variable = { which = prog_mana_mod value = 0 }
+		set_variable = { which = prog_estates value = 0 }
+		set_variable = { which = prog_estates_mod value = 0 }
+		
+		stability_monthly_calc = { ESTATE = nobles }
+		stability_monthly_calc = { ESTATE = burghers }
+		stability_monthly_calc = { ESTATE = church }
+		
+		stability_monthly_calc = { ESTATE = cossacks }
+		stability_monthly_calc = { ESTATE = dhimmi }
+		stability_monthly_calc = { ESTATE = nomadic_tribes }
+		
+		stability_monthly_calc = { ESTATE = brahmins }
+		stability_monthly_calc = { ESTATE = maratha }
+		stability_monthly_calc = { ESTATE = vaisyas }
+		stability_monthly_calc = { ESTATE = jains }
+		stability_monthly_calc = { ESTATE = rajput }
+		
+		# if = {
+			# limit = { has_country_flag = tib_factions_set }
+			# stability_monthly_faction = yes
+		# }
+		
+		# if = {
+			# limit = { check_variable = { which = num_estates value = 1 } }
+			
+			# divide_variable = { which = total_estates which = num_estates }
+		# }
+		divide_variable = { which = total_estates which = num_estates }
+		change_variable = { which = prog_estates which = total_estates }
+		
+		change_variable = { which = prog_estates_mod which = total_estates }
+		
+		multiply_variable = { which = total_estates which = absol_estates }
+		multiply_variable = { which = prog_estates_mod which = absol_estates }
+		
+		#add mana		
+		export_to_variable = { which = temp value = ADM who = ROOT }
+		change_variable = { which = temp value = -3 }
+		divide_variable = { which = temp value = 10 }
+		change_variable = { which = prog_mana which = temp }
+		export_to_variable = { which = temp value = DIP who = ROOT }
+		change_variable = { which = temp value = -3 }
+		divide_variable = { which = temp value = 10 }
+		change_variable = { which = prog_mana which = temp }
+		export_to_variable = { which = temp value = MIL who = ROOT }
+		change_variable = { which = temp value = -3 }
+		divide_variable = { which = temp value = 10 }
+		change_variable = { which = prog_mana which = temp }
+			
+		if = { 
+			limit = { ai = yes }
+			
+			change_variable = { which = prog_mana value = 0.9 }
+			divide_variable = { which = prog_mana value = 2 }
+		}
+		
+		change_variable = { which = prog_mana_mod which = prog_mana }
+		multiply_variable = { which = prog_mana_mod which = absol_mana }
+		
+		change_variable = { which = total_estates which = prog_mana_mod }
+		
+		#add current stability trending towards zero
+		export_to_variable = { which = prog_current_stab value = stability who = ROOT }
+		multiply_variable = { which = prog_current_stab value = -1 } # +3stab * -1.5 = -4.5 ticking when +3stab
+		change_variable = { which = total_estates which = prog_current_stab }
+		
+		#update current progress
+		change_variable = { which = current_stab which = total_estates }
+		
+		
+		#modifier calculation
+		set_variable = { which = threashold_stab_up value = 100 }
+		set_variable = { which = threashold_stab_down value = -50 }
+		
+		export_to_variable = { which = stab_modifier_up value = modifier:stability_cost_modifier who = ROOT }  #up = mod
+		# set_variable = { which = stab_modifier_down value = 1 }  #down = 1
+		# subtract_variable = { which = stab_modifier_down which = stab_modifier_up }  #down = down - up = 1 - mod
+		change_variable = { which = stab_modifier_up value = 1 }  #up = 1 + up = 1 + mod
+		
+		#threashold calculation
+		multiply_variable = { which = threashold_stab_up which = stab_modifier_up }
+		# multiply_variable = { which = threashold_stab_down which = stab_modifier_down }
+		
+		#minimum threashold
+		if = { 
+			limit = { NOT = { check_variable = { which = threashold_stab_up value = 10 } } } 
+			set_variable = { which = threashold_stab_up value = 10 }
+		}
+		
+		#stab up
+		if = { limit = { check_variable = { which = current_stab which = threashold_stab_up } }
+			if = { 
+				limit = { stability = 3 }
+				
+				add_adm_power = 100
+			}
+		
+			add_stability = 1
+			
+			add_absolutism = 1
+			
+			set_variable = { which = current_stab value = 0 }
+		}
+		#stab down
+		else_if = { limit = { check_variable = { which = threashold_stab_down which = current_stab } }
+			add_stability = -1
+			
+			set_variable = { which = current_stab value = 0 }
+		}
+	}
+	else = {
+		set_variable = { which = current_stab value = 0 }
+		
+		set_country_flag = stab_set
+	}
+}
+
+stability_monthly_calc = {
+	if = { limit = { has_estate = estate_$ESTATE$ }
+		change_variable = { which = num_estates value = 1 }
+		
+		set_variable = { which = temp_stab value = 0 }
+		if = { limit = { estate_loyalty = { estate = estate_$ESTATE$ loyalty = 60 } } 
+			change_variable = { which = temp_stab value = 1 }
+		}
+		else_if = { limit = { estate_loyalty = { estate = estate_$ESTATE$ loyalty = 40 } } 
+			change_variable = { which = temp_stab value = 0 }
+		}
+		else = { 
+			change_variable = { which = temp_stab value = -1 }
+		}
+		
+		if = { limit = { estate_influence = { estate = estate_$ESTATE$ influence = 100 } } 
+			multiply_variable = { which = temp_stab value = 5 }
+		}
+		else_if = { limit = { estate_influence = { estate = estate_$ESTATE$ influence = 80 } } 
+			multiply_variable = { which = temp_stab value = 4 }
+		}
+		else_if = { limit = { estate_influence = { estate = estate_$ESTATE$ influence = 60 } } 
+			multiply_variable = { which = temp_stab value = 3 }
+		}
+		else_if = { limit = { estate_influence = { estate = estate_$ESTATE$ influence = 40 } } 
+			multiply_variable = { which = temp_stab value = 2 }
+		}
+		else_if = { limit = { estate_influence = { estate = estate_$ESTATE$ influence = 20 } } 
+			multiply_variable = { which = temp_stab value = 1 }
+		}
+		else = {
+			multiply_variable = { which = temp_stab value = 0 }
+		}
+		
+		change_variable = { which = total_estates which = temp_stab }
+	}
+}
+
+stability_monthly_faction = {
+
+	if = {
+		limit = { 
+			has_parliament = yes 
+			OR = {
+				has_country_flag = tib_coalition_adm_dip 
+				has_country_flag = tib_coalition_adm_mil 
+				has_country_flag = tib_coalition_dip_mil
+			}
+		}
+		
+		if = {
+			limit = {
+				OR = {
+					AND = { 
+						has_country_flag = tib_coalition_adm_dip 
+						OR = {
+							NOT = { faction_influence = { faction = mr_aristocrats influence = 25 } }
+							NOT = { faction_influence = { faction = rr_girondists influence = 25 } }
+							NOT = { faction_influence = { faction = pr_captains influence = 25 } }
+						}
+					}
+					AND = { 
+						has_country_flag = tib_coalition_adm_mil 
+						OR = {
+							NOT = { faction_influence = { faction = mr_traders influence = 25 } }
+							NOT = { faction_influence = { faction = rr_royalists influence = 25 } }
+							NOT = { faction_influence = { faction = pr_smugglers influence = 25 } }
+						}
+					}
+					AND = { 
+						has_country_flag = tib_coalition_dip_mil
+						OR = {
+							NOT = { faction_influence = { faction = mr_guilds influence = 25 } }
+							NOT = { faction_influence = { faction = rr_jacobins influence = 25 } }
+							NOT = { faction_influence = { faction = pr_buccaneers influence = 25 } }
+						}
+					}
+				}
+			}
+			
+			change_variable = { which = total_estates value = 4 }
+		}
+		else = {
+			change_variable = { which = total_estates value = 1 }
+		}
+	}
+	else = {
+		if = {
+			limit = { 
+				OR = {
+					faction_with_power = { FACTION = mr_aristocrats INF = 75 }
+					faction_with_power = { FACTION = mr_traders INF = 75 }
+					faction_with_power = { FACTION = mr_guilds INF = 75 }
+					
+					faction_with_power = { FACTION = rr_girondists INF = 75 }
+					faction_with_power = { FACTION = rr_jacobins INF = 75 }
+					faction_with_power = { FACTION = rr_royalists INF = 75 }
+					
+					faction_with_power = { FACTION = pr_captains INF = 75 }
+					faction_with_power = { FACTION = pr_buccaneers INF = 75 }
+					faction_with_power = { FACTION = pr_smugglers INF = 75 }
+				}
+			}
+			
+			change_variable = { which = total_estates value = 4 }
+		}
+		else_if = {
+			limit = { 
+				OR = {
+					faction_with_power = { FACTION = mr_aristocrats INF = 50 }
+					faction_with_power = { FACTION = mr_traders INF = 50 }
+					faction_with_power = { FACTION = mr_guilds INF = 50 }
+					
+					faction_with_power = { FACTION = rr_girondists INF = 50 }
+					faction_with_power = { FACTION = rr_jacobins INF = 50 }
+					faction_with_power = { FACTION = rr_royalists INF = 50 }
+					
+					faction_with_power = { FACTION = pr_captains INF = 50 }
+					faction_with_power = { FACTION = pr_buccaneers INF = 50 }
+					faction_with_power = { FACTION = pr_smugglers INF = 50 }
+				}
+			}
+			
+			change_variable = { which = total_estates value = 1 }
+		}
+		else = {
+			change_variable = { which = total_estates value = -2 }
+		}
+	}
+}
+
+absolutism_monthly_calc = {
+	
+	if = {
+		limit = { tib_absolutism_zeal = { VALUE = 90 } }
+		if = {
+			limit = { tib_absolutism_zeal = { VALUE = 100 } }
+			set_variable = { which = tib_absolutism value = 100 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 99 } }
+			set_variable = { which = tib_absolutism value = 99 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 98 } }
+			set_variable = { which = tib_absolutism value = 98 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 97 } }
+			set_variable = { which = tib_absolutism value = 97 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 96 } }
+			set_variable = { which = tib_absolutism value = 96 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 95 } }
+			set_variable = { which = tib_absolutism value = 95 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 94 } }
+			set_variable = { which = tib_absolutism value = 94 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 93 } }
+			set_variable = { which = tib_absolutism value = 93 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 92 } }
+			set_variable = { which = tib_absolutism value = 92 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 91 } }
+			set_variable = { which = tib_absolutism value = 91 }
+		}
+		else = {
+			set_variable = { which = tib_absolutism value = 90 }
+		}
+	}
+	else_if = {
+		limit = { tib_absolutism_zeal = { VALUE = 80 } }
+		if = {
+			limit = { tib_absolutism_zeal = { VALUE = 89 } }
+			set_variable = { which = tib_absolutism value = 89 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 88 } }
+			set_variable = { which = tib_absolutism value = 88 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 87 } }
+			set_variable = { which = tib_absolutism value = 87 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 86 } }
+			set_variable = { which = tib_absolutism value = 86 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 85 } }
+			set_variable = { which = tib_absolutism value = 85 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 84 } }
+			set_variable = { which = tib_absolutism value = 84 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 83 } }
+			set_variable = { which = tib_absolutism value = 83 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 82 } }
+			set_variable = { which = tib_absolutism value = 82 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 81 } }
+			set_variable = { which = tib_absolutism value = 81 }
+		}
+		else = {
+			set_variable = { which = tib_absolutism value = 80 }
+		}
+	}
+	else_if = {
+		limit = { tib_absolutism_zeal = { VALUE = 70 } }
+		if = {
+			limit = { tib_absolutism_zeal = { VALUE = 79 } }
+			set_variable = { which = tib_absolutism value = 79 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 78 } }
+			set_variable = { which = tib_absolutism value = 78 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 77 } }
+			set_variable = { which = tib_absolutism value = 77 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 76 } }
+			set_variable = { which = tib_absolutism value = 76 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 75 } }
+			set_variable = { which = tib_absolutism value = 75 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 74 } }
+			set_variable = { which = tib_absolutism value = 74 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 73 } }
+			set_variable = { which = tib_absolutism value = 73 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 72 } }
+			set_variable = { which = tib_absolutism value = 72 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 71 } }
+			set_variable = { which = tib_absolutism value = 71 }
+		}
+		else = {
+			set_variable = { which = tib_absolutism value = 70 }
+		}
+	}
+	else_if = {
+		limit = { tib_absolutism_zeal = { VALUE = 60 } }
+		if = {
+			limit = { tib_absolutism_zeal = { VALUE = 69 } }
+			set_variable = { which = tib_absolutism value = 69 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 68 } }
+			set_variable = { which = tib_absolutism value = 68 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 67 } }
+			set_variable = { which = tib_absolutism value = 67 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 66 } }
+			set_variable = { which = tib_absolutism value = 66 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 65 } }
+			set_variable = { which = tib_absolutism value = 65 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 64 } }
+			set_variable = { which = tib_absolutism value = 64 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 63 } }
+			set_variable = { which = tib_absolutism value = 63 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 62 } }
+			set_variable = { which = tib_absolutism value = 62 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 61 } }
+			set_variable = { which = tib_absolutism value = 61 }
+		}
+		else = {
+			set_variable = { which = tib_absolutism value = 60 }
+		}
+	}
+	else_if = {
+		limit = { tib_absolutism_zeal = { VALUE = 50 } }
+		if = {
+			limit = { tib_absolutism_zeal = { VALUE = 59 } }
+			set_variable = { which = tib_absolutism value = 59 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 58 } }
+			set_variable = { which = tib_absolutism value = 58 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 57 } }
+			set_variable = { which = tib_absolutism value = 57 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 56 } }
+			set_variable = { which = tib_absolutism value = 56 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 55 } }
+			set_variable = { which = tib_absolutism value = 55 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 54 } }
+			set_variable = { which = tib_absolutism value = 54 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 53 } }
+			set_variable = { which = tib_absolutism value = 53 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 52 } }
+			set_variable = { which = tib_absolutism value = 52 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 51 } }
+			set_variable = { which = tib_absolutism value = 51 }
+		}
+		else = {
+			set_variable = { which = tib_absolutism value = 50 }
+		}
+	}
+	else_if = {
+		limit = { tib_absolutism_zeal = { VALUE = 40 } }
+		if = {
+			limit = { tib_absolutism_zeal = { VALUE = 49 } }
+			set_variable = { which = tib_absolutism value = 49 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 48 } }
+			set_variable = { which = tib_absolutism value = 48 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 47 } }
+			set_variable = { which = tib_absolutism value = 47 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 46 } }
+			set_variable = { which = tib_absolutism value = 46 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 45 } }
+			set_variable = { which = tib_absolutism value = 45 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 44 } }
+			set_variable = { which = tib_absolutism value = 44 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 43 } }
+			set_variable = { which = tib_absolutism value = 43 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 42 } }
+			set_variable = { which = tib_absolutism value = 42 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 41 } }
+			set_variable = { which = tib_absolutism value = 41 }
+		}
+		else = {
+			set_variable = { which = tib_absolutism value = 40 }
+		}
+	}
+	else_if = {
+		limit = { tib_absolutism_zeal = { VALUE = 30 } }
+		if = {
+			limit = { tib_absolutism_zeal = { VALUE = 39 } }
+			set_variable = { which = tib_absolutism value = 39 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 38 } }
+			set_variable = { which = tib_absolutism value = 38 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 37 } }
+			set_variable = { which = tib_absolutism value = 37 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 36 } }
+			set_variable = { which = tib_absolutism value = 36 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 35 } }
+			set_variable = { which = tib_absolutism value = 35 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 34 } }
+			set_variable = { which = tib_absolutism value = 34 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 33 } }
+			set_variable = { which = tib_absolutism value = 33 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 32 } }
+			set_variable = { which = tib_absolutism value = 32 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 31 } }
+			set_variable = { which = tib_absolutism value = 31 }
+		}
+		else = {
+			set_variable = { which = tib_absolutism value = 30 }
+		}
+	}
+	else_if = {
+		limit = { tib_absolutism_zeal = { VALUE = 20 } }
+		if = {
+			limit = { tib_absolutism_zeal = { VALUE = 29 } }
+			set_variable = { which = tib_absolutism value = 29 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 28 } }
+			set_variable = { which = tib_absolutism value = 28 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 27 } }
+			set_variable = { which = tib_absolutism value = 27 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 26 } }
+			set_variable = { which = tib_absolutism value = 26 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 25 } }
+			set_variable = { which = tib_absolutism value = 25 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 24 } }
+			set_variable = { which = tib_absolutism value = 24 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 23 } }
+			set_variable = { which = tib_absolutism value = 23 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 22 } }
+			set_variable = { which = tib_absolutism value = 22 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 21 } }
+			set_variable = { which = tib_absolutism value = 21 }
+		}
+		else = {
+			set_variable = { which = tib_absolutism value = 20 }
+		}
+	}
+	else_if = {
+		limit = { tib_absolutism_zeal = { VALUE = 10 } }
+		if = {
+			limit = { tib_absolutism_zeal = { VALUE = 19 } }
+			set_variable = { which = tib_absolutism value = 19 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 18 } }
+			set_variable = { which = tib_absolutism value = 18 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 17 } }
+			set_variable = { which = tib_absolutism value = 17 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 16 } }
+			set_variable = { which = tib_absolutism value = 16 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 15 } }
+			set_variable = { which = tib_absolutism value = 15 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 14 } }
+			set_variable = { which = tib_absolutism value = 14 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 13 } }
+			set_variable = { which = tib_absolutism value = 13 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 12 } }
+			set_variable = { which = tib_absolutism value = 12 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 11 } }
+			set_variable = { which = tib_absolutism value = 11 }
+		}
+		else = {
+			set_variable = { which = tib_absolutism value = 10 }
+		}
+	}
+	else = {
+		if = {
+			limit = { tib_absolutism_zeal = { VALUE = 9 } }
+			set_variable = { which = tib_absolutism value = 9 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 8 } }
+			set_variable = { which = tib_absolutism value = 8 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 7 } }
+			set_variable = { which = tib_absolutism value = 7 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 6 } }
+			set_variable = { which = tib_absolutism value = 6 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 5 } }
+			set_variable = { which = tib_absolutism value = 5 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 4 } }
+			set_variable = { which = tib_absolutism value = 4 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 3 } }
+			set_variable = { which = tib_absolutism value = 3 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 2 } }
+			set_variable = { which = tib_absolutism value = 2 }
+		}
+		else_if = {
+			limit = { tib_absolutism_zeal = { VALUE = 1 } }
+			set_variable = { which = tib_absolutism value = 1 }
+		}
+		else = {
+			set_variable = { which = tib_absolutism value = 0 }
+		}
+	}
+}
+
+
+
+
+
+
+
+

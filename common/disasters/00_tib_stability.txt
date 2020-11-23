@@ -1,0 +1,22 @@
+bop_stability_progress = {
+	potential = {
+		always = yes
+	}
+	
+	can_start = {
+		custom_trigger_tooltip = {
+			tooltip = DESC_BOP_STABILITY_PROGRESS
+			
+			NOT = { check_variable = { which = total_estates value = 0 } }
+		}
+	}
+	
+	can_stop = {
+		custom_trigger_tooltip = {
+			tooltip = DESC_BOP_STABILITY_NEG_PROGRESS
+			
+			check_variable = { which = total_estates value = 0 }
+		}
+	}
+}
+

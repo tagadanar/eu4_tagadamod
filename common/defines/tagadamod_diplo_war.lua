@@ -2,7 +2,7 @@
 -- old value are always kept in comment like this : -- oldvalue -- other comment on effect of the value
 
 -- the goal of this is to allow more time to recover from a big loss (aka 100% warscore) making it more hard to farm a dying country without breaking truce
-NDefines.NDiplomacy.SCALED_TRUCE_YEARS = 15 -- 10 -- Additional years of truce based on % of warscore taken in war (100% warscore = full scaled truce years) Base truce is 5years+scaledyears
+-- NDefines.NDiplomacy.SCALED_TRUCE_YEARS = 15 -- 10 -- Additional years of truce based on % of warscore taken in war (100% warscore = full scaled truce years) Base truce is 5years+scaledyears
 -- making revanchism last a little bit longer too, to slightly help recovery
 NDefines.NDiplomacy.REVANCHISM_MONTHLY_DECAY = 0.555 -- 0.833 -- original comment: Decay for the Revanchism modifier. About 20 years to decay all of it by default.
 -- seems to me that 20years for 0.833 is a mistake ! 0.833*120 = 99.96% => so revanchism last 10year top, making it 15 ftm
@@ -11,7 +11,7 @@ NDefines.NDiplomacy.REVANCHISM_MONTHLY_DECAY = 0.555 -- 0.833 -- original commen
 -- increasing warcost & aggressive expansion vs ally not fully called in war
 -- goal is to make it hard to hurt someone by targeting is weak ally to have him alone without is strong allys
 -- this will protect dumb ia from weak alliance problem vs player, make it safer to join a call to war to defend/offend other, you risk to lose less in peace offer (still you are hurt eco&military when you do war so it can still cost a lot)
-NDefines.NDiplomacy.ALLY_PEACE_COST_MULT = 3 -- 2 -- Taking things from allies that are not fully called into the war costs this much more
+-- NDefines.NDiplomacy.ALLY_PEACE_COST_MULT = 3 -- 2 -- Taking things from allies that are not fully called into the war costs this much more
 NDefines.NDiplomacy.ALLY_AE_MULT = 2 -- 1.5 -- Taking things from allies that are not fully called into the war generates this much more AE
 
 -- reducing AE to 50% instead of 75% for defender, as it's seems more fair to expand as a retaliation against agression
@@ -54,7 +54,7 @@ NDefines.NDiplomacy.AE_ATTACKER_DEVELOPMENT = 0.02 -- 0.01 -- Affects Aggressive
 -- NDefines.NDiplomacy.AE_DEFENDER_DEVELOPMENT = 0.01 -- Affects Aggressive Expansion gain with other countries for the defender upon taking a province. Scales with development, +50% cap (at 1000 development)
 
 -- increasing AE with far away country to make faraway country more concerned about a big blobing country
-NDefines.NDiplomacy.AE_DISTANCE_BASE = 0.25 -- 0.75 -- Affects Aggressive Expansion gain with other countries based on the distance they are from the actor. (from internet, lower value is more ae far away)
+NDefines.NDiplomacy.AE_DISTANCE_BASE = 0.5 -- 0.75 -- Affects Aggressive Expansion gain with other countries based on the distance they are from the actor. (from internet, lower value is more ae far away)
 -- NDefines.NDiplomacy.AE_PROVINCE_CAP = 30 -- Province development above this will not count for AE (also used for warscore cost cap).
 NDefines.NDiplomacy.AE_THREATEN_WAR = 0.75 -- 1.0 -- Aggressive Expansion gained upon the taking a province with the Threaten War action. Scales per development.
 -- NDefines.NDiplomacy.PO_DEMAND_PROVINCES_AE = 0.75 -- (Per development)
@@ -82,7 +82,7 @@ NDefines.NDiplomacy.PEACE_COST_RELEASE_ANNEXED = 0.75 -- 1 -- Release annexed na
 -- NDefines.NCountry.OVEREXTENSION_OVERSEAS_FACTOR = 0.5 -- Modifier to overextension from overseas provinces
 
 -- goal is to add more intervention during wars between great power
-NDefines.NDiplomacy.NUM_OF_GREAT_POWERS = 10 -- 8
+NDefines.NDiplomacy.NUM_OF_GREAT_POWERS = 12 -- 8
 
 -- moar diplo play
 NDefines.NDiplomacy.VASSALIZE_BASE_DEVELOPMENT_CAP = 300 -- 100	Countries with more total development than this cannot be vassalized.

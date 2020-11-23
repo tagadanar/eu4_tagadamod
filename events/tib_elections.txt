@@ -1,0 +1,442 @@
+namespace = tib_election
+
+#parliamentary elections start
+country_event = {
+	id = tib_election.01
+	title = tib_election.01.t
+	desc = tib_election.01.d
+	picture = ELECTION_REPUBLICAN_eventPicture
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = { days = 0 }
+	
+	immediate = {
+		hidden_effect = { set_country_flag = tib_election_in_progress }
+	}
+	
+	option = {
+		name = tib_election.01.a
+		
+		hidden_effect = {
+			# country_event = {
+				# id = tib_elections.00
+				# days = 0
+			# }
+			set_country_flag = tib_election_in_progress
+			country_event = {
+				id = tib_election.13
+				days = 60
+			}
+		}
+	
+		ai_chance = { factor = 100 }
+	}
+}
+
+#internal policy
+country_event = {
+	id = tib_election.13
+	title = tib_election.13.t
+	desc = tib_election.13.d
+	picture = ELECTION_REPUBLICAN_eventPicture
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = { days = 0 }
+	
+	after = {
+		country_event = {
+			id = tib_election.14
+			days = 60
+		}
+	}
+	
+	#based on performance
+	option = {
+		name = tib_election.13.a
+		
+		add_country_modifier = { name = tib_adm_a duration = 1460 }
+		tib_add_faction_influence = { FACTION = mr_guilds }
+		tib_add_faction_influence = { FACTION = rr_jacobins }
+		tib_add_faction_influence = { FACTION = pr_buccaneers }
+	
+		ai_chance = { factor = 33 }
+	}
+	#based on donations
+	option = {
+		name = tib_election.13.b
+		
+		add_country_modifier = { name = tib_dip_a duration = 1460 }
+		tib_add_faction_influence = { FACTION = mr_traders }
+		tib_add_faction_influence = { FACTION = rr_royalists }
+		tib_add_faction_influence = { FACTION = pr_smugglers }
+	
+		ai_chance = { factor = 33 }
+	}
+	#based on property
+	option = {
+		name = tib_election.13.c
+		
+		add_country_modifier = { name = tib_mil_a duration = 1460 }
+		tib_add_faction_influence = { FACTION = mr_aristocrats }
+		tib_add_faction_influence = { FACTION = rr_girondists }
+		tib_add_faction_influence = { FACTION = pr_captains }
+	
+		ai_chance = { factor = 33 }
+	}
+}
+
+#diplomacy
+country_event = {
+	id = tib_election.14
+	title = tib_election.14.t
+	desc = tib_election.14.d
+	picture = ELECTION_REPUBLICAN_eventPicture
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = { days = 0 }
+	
+	after = {
+		country_event = {
+			id = tib_election.15
+			days = 60
+		}
+	}
+	
+	#promote national producion abroad
+	option = {
+		name = tib_election.14.a
+		
+		add_country_modifier = { name = tib_adm_b duration = 1460 }
+		tib_add_faction_influence = { FACTION = mr_guilds }
+		tib_add_faction_influence = { FACTION = rr_jacobins }
+		tib_add_faction_influence = { FACTION = pr_buccaneers }
+	
+		ai_chance = { factor = 100 }
+	}
+	#promote business relations
+	option = {
+		name = tib_election.14.b
+		
+		add_country_modifier = { name = tib_dip_b duration = 1460 }
+		tib_add_faction_influence = { FACTION = mr_traders }
+		tib_add_faction_influence = { FACTION = rr_royalists }
+		tib_add_faction_influence = { FACTION = pr_smugglers }
+	
+		ai_chance = { factor = 100 }
+	}
+	#promote our culture and tradition
+	option = {
+		name = tib_election.14.c
+		
+		add_country_modifier = { name = tib_mil_b duration = 1460 }
+		tib_add_faction_influence = { FACTION = mr_aristocrats }
+		tib_add_faction_influence = { FACTION = rr_girondists }
+		tib_add_faction_influence = { FACTION = pr_captains }
+	
+		ai_chance = { factor = 100 }
+	}
+}
+
+#military
+country_event = {
+	id = tib_election.15
+	title = tib_election.15.t
+	desc = tib_election.15.d
+	picture = ELECTION_REPUBLICAN_eventPicture
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = { days = 0 }
+	
+	after = {
+		country_event = {
+			id = tib_election.12
+			days = 60
+		}
+	}
+	
+	#focus on morale
+	option = {
+		name = tib_election.15.a
+		
+		add_country_modifier = { name = tib_adm_c duration = 1460 }
+		tib_add_faction_influence = { FACTION = mr_guilds }
+		tib_add_faction_influence = { FACTION = rr_jacobins }
+		tib_add_faction_influence = { FACTION = pr_buccaneers }
+	
+		ai_chance = { factor = 100 }
+	}
+	#focus on the navy
+	option = {
+		name = tib_election.15.b
+		
+		add_country_modifier = { name = tib_dip_c duration = 1460 }
+		tib_add_faction_influence = { FACTION = mr_traders }
+		tib_add_faction_influence = { FACTION = rr_royalists }
+		tib_add_faction_influence = { FACTION = pr_smugglers }
+	
+		ai_chance = { factor = 100 }
+	}
+	#focus on the academy
+	option = {
+		name = tib_election.15.c
+		
+		add_country_modifier = { name = tib_mil_c duration = 1460 }
+		tib_add_faction_influence = { FACTION = mr_aristocrats }
+		tib_add_faction_influence = { FACTION = rr_girondists }
+		tib_add_faction_influence = { FACTION = pr_captains }
+	
+		ai_chance = { factor = 100 }
+	}
+}
+
+#form majority
+country_event = {
+	id = tib_election.12
+	title = tib_election.12.t
+	desc = tib_election.12.d
+	picture = ELECTION_REPUBLICAN_eventPicture
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = { days = 0 }
+	
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							faction_with_power = { FACTION = mr_aristocrats INF = 35 }
+							faction_with_power = { FACTION = mr_traders INF = 35 }
+							faction_with_power = { FACTION = mr_guilds INF = 35 }
+							
+							faction_with_power = { FACTION = rr_girondists INF = 35 }
+							faction_with_power = { FACTION = rr_jacobins INF = 35 }
+							faction_with_power = { FACTION = rr_royalists INF = 35 }
+							
+							faction_with_power = { FACTION = pr_captains INF = 35 }
+							faction_with_power = { FACTION = pr_buccaneers INF = 35 }
+							faction_with_power = { FACTION = pr_smugglers INF = 35 }
+						}
+					}
+				}
+				
+				if = {
+					limit = { faction_in_power = mr_guilds }
+					add_faction_influence = { faction = mr_guilds influence = 2 }
+				}
+				if = {
+					limit = { faction_in_power = mr_aristocrats }
+					add_faction_influence = { faction = mr_aristocrats influence = 2 }
+				}
+				if = {
+					limit = { faction_in_power = mr_traders }
+					add_faction_influence = { faction = mr_traders influence = 2 }
+				}
+				
+				if = {
+					limit = { faction_in_power = rr_girondists }
+					add_faction_influence = { faction = rr_girondists influence = 2 }
+				}
+				if = {
+					limit = { faction_in_power = rr_jacobins }
+					add_faction_influence = { faction = rr_jacobins influence = 2 }
+				}
+				if = {
+					limit = { faction_in_power = rr_royalists }
+					add_faction_influence = { faction = rr_royalists influence = 2 }
+				}
+				
+				if = {
+					limit = { faction_in_power = pr_captains }
+					add_faction_influence = { faction = pr_captains influence = 2 }
+				}
+				if = {
+					limit = { faction_in_power = pr_buccaneers }
+					add_faction_influence = { faction = pr_buccaneers influence = 2 }
+				}
+				if = {
+					limit = { faction_in_power = pr_smugglers }
+					add_faction_influence = { faction = pr_smugglers influence = 2 }
+				}
+			}
+		}
+	}
+	
+	after = {
+		clr_country_flag = tib_election_in_progress
+	}
+	
+	#Go alone
+	option = {
+		name = tib_election.12.a
+		trigger = {
+			OR = {
+				faction_with_power = { FACTION = mr_aristocrats INF = 50 }
+				faction_with_power = { FACTION = mr_traders INF = 50 }
+				faction_with_power = { FACTION = mr_guilds INF = 50 }
+				
+				faction_with_power = { FACTION = rr_girondists INF = 50 }
+				faction_with_power = { FACTION = rr_jacobins INF = 50 }
+				faction_with_power = { FACTION = rr_royalists INF = 50 }
+				
+				faction_with_power = { FACTION = pr_captains INF = 50 }
+				faction_with_power = { FACTION = pr_buccaneers INF = 50 }
+				faction_with_power = { FACTION = pr_smugglers INF = 50 }
+			}
+		}
+	
+		ai_chance = { factor = 10000 }
+	}
+	#make conssessions
+	option = {
+		name = tib_election.12.b
+		
+		trigger = {
+			NOT = { 
+				OR = {
+					faction_with_power = { FACTION = mr_aristocrats INF = 50 }
+					faction_with_power = { FACTION = mr_traders INF = 50 }
+					faction_with_power = { FACTION = mr_guilds INF = 50 }
+					
+					faction_with_power = { FACTION = rr_girondists INF = 50 }
+					faction_with_power = { FACTION = rr_jacobins INF = 50 }
+					faction_with_power = { FACTION = rr_royalists INF = 50 }
+					
+					faction_with_power = { FACTION = pr_captains INF = 50 }
+					faction_with_power = { FACTION = pr_buccaneers INF = 50 }
+					faction_with_power = { FACTION = pr_smugglers INF = 50 }
+				}
+			}
+		}
+		
+		if = {
+			limit = { faction_in_power = mr_guilds }
+			add_faction_influence = { faction = mr_guilds influence = 15 }
+		}
+		if = {
+			limit = { faction_in_power = mr_aristocrats }
+			add_faction_influence = { faction = mr_aristocrats influence = 15 }
+		}
+		if = {
+			limit = { faction_in_power = mr_traders }
+			add_faction_influence = { faction = mr_traders influence = 15 }
+		}
+		
+		if = {
+			limit = { faction_in_power = rr_girondists }
+			add_faction_influence = { faction = rr_girondists influence = 15 }
+		}
+		if = {
+			limit = { faction_in_power = rr_jacobins }
+			add_faction_influence = { faction = rr_jacobins influence = 15 }
+		}
+		if = {
+			limit = { faction_in_power = rr_royalists }
+			add_faction_influence = { faction = rr_royalists influence = 15 }
+		}
+		
+		if = {
+			limit = { faction_in_power = pr_captains }
+			add_faction_influence = { faction = pr_captains influence = 15 }
+		}
+		if = {
+			limit = { faction_in_power = pr_buccaneers }
+			add_faction_influence = { faction = pr_buccaneers influence = 15 }
+		}
+		if = {
+			limit = { faction_in_power = pr_smugglers }
+			add_faction_influence = { faction = pr_smugglers influence = 15 }
+		}
+		
+		add_adm_power = -150
+		add_dip_power = -150
+		add_mil_power = -150
+		
+		ai_chance = { factor = 100 }
+	}
+}
+
+#vote of no confidence
+country_event = {
+	id = tib_election.16
+	title = tib_election.16.t
+	desc = tib_election.16.d
+	picture = ELECTION_REPUBLICAN_eventPicture
+	
+	mean_time_to_happen = { days = 60 }
+	
+	trigger = {
+		NOT = { has_country_flag = tib_election_in_progress }
+		has_country_flag = tib_parliament_set
+		OR = {
+			AND = {
+				faction_in_power = mr_aristocrats
+				NOT = { faction_influence = { faction = mr_aristocrats influence = 50 } }
+			}
+			AND = {
+				faction_in_power = mr_traders
+				NOT = { faction_influence = { faction = mr_traders influence = 50 } }
+			}
+			AND = {
+				faction_in_power = mr_guilds
+				NOT = { faction_influence = { faction = mr_guilds influence = 50 } }
+			}
+			
+			AND = {
+				faction_in_power = rr_girondists
+				NOT = { faction_influence = { faction = rr_girondists influence = 50 } }
+			}
+			AND = {
+				faction_in_power = rr_jacobins
+				NOT = { faction_influence = { faction = rr_jacobins influence = 50 } }
+			}
+			AND = {
+				faction_in_power = rr_royalists
+				NOT = { faction_influence = { faction = rr_royalists influence = 50 } }
+			}
+			
+			AND = {
+				faction_in_power = pr_captains
+				NOT = { faction_influence = { faction = pr_captains influence = 50 } }
+			}
+			AND = {
+				faction_in_power = pr_buccaneers
+				NOT = { faction_influence = { faction = pr_buccaneers influence = 50 } }
+			}
+			AND = {
+				faction_in_power = pr_smugglers
+				NOT = { faction_influence = { faction = pr_smugglers influence = 50 } }
+			}
+		}
+	}
+	
+	#attempt to form a new majority
+	option = {
+		name = tib_election.16.a
+		
+		add_stability = -1
+		country_event = {
+			id = tib_election.12
+			days = 0
+		}
+	
+		ai_chance = { factor = 100 }
+	}
+	#invoke elections
+	option = {
+		name = tib_election.16.b
+		
+		add_stability = -2
+		country_event = {
+			id = tib_election.01
+			days = 0
+		}
+	
+		ai_chance = { factor = 100 }
+	}
+}

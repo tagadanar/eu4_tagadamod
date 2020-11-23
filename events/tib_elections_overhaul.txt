@@ -1,0 +1,584 @@
+namespace = tib_elections_overhaul
+
+# Election!
+country_event = {
+	id = tib_elections_overhaul.700
+	title = "EVTNAME700"
+	picture = ELECTION_REPUBLICAN_eventPicture
+	
+	desc = {
+		trigger = {
+			NOT = { has_ruler_flag = leader_has_been_pushed_out }
+			NOT = { has_country_flag = caretaker_revolutionary_government }
+		}
+		desc = EVTDESC700
+	}
+	
+	desc = {
+		trigger = { has_ruler_flag = leader_has_been_pushed_out }
+		desc = elections.700.d
+	}
+	desc = {
+		trigger = { has_country_flag = caretaker_revolutionary_government }
+		desc = elections.700.caretaker
+	}
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { has_states_general_mechanic = yes }
+		NOT = { has_government_attribute = lottery_election }
+		NOT = { has_reform = pirate_republic_reform }
+		NOT = { has_reform = military_dictatorship_reform }
+		NOT = { has_reform = admiralty_reform }
+		NOT = { has_reform = prussian_republic_reform }
+		NOT = { has_disaster =  bonfire_of_the_vanities_disaster }
+		if = {
+			limit = {
+				has_country_flag = caretaker_revolutionary_government
+			}
+			republican_tradition = 50
+		}
+	}
+
+	after = {
+		clr_country_flag = caretaker_revolutionary_government
+	}
+
+	option = {
+		name = "EVTOPTA700"	# Current ruler stays
+		trigger = {
+			has_regency = no
+			NOT = { has_ruler_flag = leader_has_been_pushed_out }
+		}
+		ai_chance = { 
+			factor = 60
+			modifier = {
+				factor = 0
+				NOT = { republican_tradition = 25 }
+			}	
+			modifier = {
+				factor = 0.5
+				NOT = { republican_tradition = 50 }
+			}				
+			modifier = {
+				factor = 0.5
+				NOT = { republican_tradition = 75 }
+			}	
+			modifier = {
+				factor = 2.0
+				republican_tradition = 90
+			}
+			modifier = {
+				factor = 0
+				NOT = { faction_is_ruler = yes }
+			}	
+		}
+		custom_tooltip = remains_ruler
+		if = {
+			limit = {
+				is_tribal = no 
+				government = republic
+				NOT = { republican_tradition = 20 }				
+				NOT = { is_revolutionary_republic_trigger = yes }
+				has_dlc = "Res Publica"
+			}
+			add_government_reform = presidential_despot_reform	
+		}
+		else_if = {
+			limit = {
+				government = republic
+				NOT = { republican_tradition = 20 }	
+				is_revolutionary_republic_trigger = yes
+			}
+			change_government_to_monarchy = yes
+			add_government_reform = revolutionary_empire_reform
+		}
+		if = {
+			limit = {
+				is_tribal = no  
+				government = republic
+				NOT = { republican_tradition = 20 }
+				NOT = { has_dlc = "Res Publica" }
+			}
+			change_government_to_monarchy = yes
+			#set_legacy_government = despotic_monarchy
+		}
+		if = {
+			limit = {
+				has_country_flag = strengthened_signoria_flag
+			}
+			custom_tooltip = strengthened_signoria_election_tt
+			clr_country_flag = strengthened_signoria_flag
+		}
+		
+		if = {
+			limit = { faction_is_ruler = yes } #if ruler is from ruling faction
+			add_scaled_republican_tradition = -10
+		}
+		else = {
+			add_scaled_republican_tradition = -15
+		}
+		
+		add_adm_power = 150
+		add_dip_power = 150
+		add_mil_power = 150
+		add_karma = -5
+	}
+	option = {
+		name = "EVTOPTB700"	# An administrator type
+		ai_chance = { 
+			factor = 20 
+			modifier = {
+				factor = 0
+				AND = {
+					NOT = { faction_in_power = mr_guilds }
+					NOT = { faction_in_power = rr_jacobins }
+					NOT = { faction_in_power = pr_buccaneers }
+				}
+			}	
+		}
+		if = {
+			limit = { republic_with_female_rulers_trigger = yes }
+			define_ruler = {
+				mil = -1
+				adm = 2
+				dip = -1
+				random_gender = yes # Allows random gender for republics
+			}
+		}
+		else = {
+			define_ruler = {
+				mil = -1
+				adm = 2
+				dip = -1	
+			}
+		}
+		if = {
+			limit = { 
+				AND = {
+					NOT = { faction_in_power = mr_guilds }
+					NOT = { faction_in_power = rr_jacobins }
+					NOT = { faction_in_power = pr_buccaneers }
+				}
+			}
+			add_scaled_republican_tradition = -5
+		}
+		
+		add_karma = 10
+		set_ruler_flag = ruler_is_adm
+		clr_ruler_flag = ruler_is_dip
+		clr_ruler_flag = ruler_is_mil
+	}
+	option = {
+		name = "EVTOPTC700"	# A diplomat
+		ai_chance = { 
+			factor = 20 
+			modifier = {
+				factor = 0
+				AND = {
+					NOT = { faction_in_power = mr_traders }
+					NOT = { faction_in_power = rr_royalists }
+					NOT = { faction_in_power = pr_smugglers }
+				}
+			}	
+		}
+		if = {
+			limit = { republic_with_female_rulers_trigger = yes }
+			define_ruler = {
+				dip = 2
+				adm = -1
+				mil = -1
+				random_gender = yes # Allows random gender for republics
+			}
+		}
+		else = {
+			define_ruler = {
+				dip = 2
+				adm = -1
+				mil = -1
+			}
+		}
+		
+		if = {
+			limit = { 
+				AND = {
+					NOT = { faction_in_power = mr_traders }
+					NOT = { faction_in_power = rr_royalists }
+					NOT = { faction_in_power = pr_smugglers }
+				}
+			}
+			add_scaled_republican_tradition = -5
+		}
+		
+		add_karma = 10
+		clr_ruler_flag = ruler_is_adm
+		set_ruler_flag = ruler_is_dip
+		clr_ruler_flag = ruler_is_mil			
+	}
+	option = {
+		name = "EVTOPTD700"	# A military man
+		ai_chance = { 
+			factor = 20 
+			modifier = {
+				factor = 0
+				AND = {
+					NOT = { faction_in_power = mr_aristocrats }
+					NOT = { faction_in_power = rr_girondists }
+					NOT = { faction_in_power = pr_captains }
+				}
+			}	
+		}
+		if = {
+			limit = { republic_with_female_rulers_trigger = yes }
+			define_ruler = {
+				mil = 2
+				adm = -1
+				dip = -1	
+				random_gender = yes # Allows random gender for republics
+			}
+		}
+		else = {
+			define_ruler = {
+				mil = 2
+				adm = -1
+				dip = -1	
+			}
+		}
+		
+		if = {
+			limit = { 
+				AND = {
+					NOT = { faction_in_power = mr_aristocrats }
+					NOT = { faction_in_power = rr_girondists }
+					NOT = { faction_in_power = pr_captains }
+				}
+			}
+			add_scaled_republican_tradition = -5
+		}
+		
+		add_karma = 10
+		clr_ruler_flag = ruler_is_adm
+		clr_ruler_flag = ruler_is_dip
+		set_ruler_flag = ruler_is_mil
+	}
+
+	option = { # Nepotism choice, re-electing within dynasty
+		name = "EVTOPTE700"
+		trigger = {
+			has_government_attribute = enables_nepotism
+		}
+		ai_chance = { factor = 10 }
+		if = {
+			limit = {
+				has_country_flag = strengthened_signoria_flag
+			}
+			custom_tooltip = strengthened_signoria_election_tt
+			clr_country_flag = strengthened_signoria_flag
+		}
+		else = {
+			add_scaled_republican_tradition = -4
+		}
+		if = {
+			limit = { 
+				republic_with_female_rulers_trigger = yes
+				NOT = { has_reform = signoria_reform }
+			}
+			define_ruler = {
+				mil = -2
+				adm = -2
+				dip = -2
+				min_age = 30
+				max_age = 50
+				name = "lastname"
+				random_gender = yes # Allows random gender for republics
+			}
+		}
+		else_if = {
+			limit = { 
+				republic_with_female_rulers_trigger = yes
+				has_reform = signoria_reform
+			}
+			define_ruler = {
+				min_age = 30
+				max_age = 50
+				name = "lastname"
+				random_gender = yes # Allows random gender for republics
+			}
+		}
+		else_if = {
+			limit = { has_reform = signoria_reform }
+			define_ruler = {
+				min_age = 30
+				max_age = 50
+				name = "lastname"
+			}
+		}
+		else = {
+			define_ruler = {
+				mil = -2
+				adm = -2
+				dip = -2
+				min_age = 30
+				max_age = 50
+				name = "lastname"
+			}
+		}
+		if = {
+			limit = { 
+				has_faction = mr_aristocrats 
+			}
+			add_faction_influence = {
+				faction = mr_aristocrats
+				influence = 10
+			}		
+			clr_ruler_flag = ruler_is_adm
+			clr_ruler_flag = ruler_is_dip
+			set_ruler_flag = ruler_is_mil		
+		}
+	}
+}
+
+# Election!
+country_event = {
+	id = tib_elections_overhaul.701
+	title = "EVTNAME700"
+	desc = "EVTDESC701"
+	picture = ELECTION_REPUBLICAN_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { has_states_general_mechanic = yes }
+		NOT = { has_government_attribute = lottery_election }
+		NOT = { has_reform = pirate_republic_reform }
+		NOT = { has_reform = military_dictatorship_reform }
+		NOT = { has_reform = admiralty_reform }
+		NOT = { has_reform = prussian_republic_reform }
+		NOT = { has_disaster =  bonfire_of_the_vanities_disaster }
+		NOT = { has_country_modifier = just_had_revolution_bringing_someone_to_power_timer }
+		if = {
+			limit = {
+				has_reform = junior_revolutionary_republic_reform
+				has_country_flag = caretaker_revolutionary_government
+			}
+			republican_tradition = 50
+		}
+	}
+	
+	option = {
+		name = "EVTOPTB700"	# An administrator type
+		ai_chance = { 
+			factor = 20 
+			modifier = {
+				factor = 0
+				AND = {
+					NOT = { faction_in_power = mr_guilds }
+					NOT = { faction_in_power = rr_jacobins }
+					NOT = { faction_in_power = pr_buccaneers }
+				}
+			}	
+		}
+		if = {
+			limit = { republic_with_female_rulers_trigger = yes }
+			define_ruler = {
+				mil = -1
+				adm = 2
+				dip = -1
+				random_gender = yes # Allows random gender for republics
+			}
+		}
+		else = {
+			define_ruler = {
+				mil = -1
+				adm = 2
+				dip = -1	
+			}
+		}
+		if = {
+			limit = { 
+				AND = {
+					NOT = { faction_in_power = mr_guilds }
+					NOT = { faction_in_power = rr_jacobins }
+					NOT = { faction_in_power = pr_buccaneers }
+				}
+			}
+			add_scaled_republican_tradition = -5
+		}
+		
+		add_karma = 10
+		set_ruler_flag = ruler_is_adm
+		clr_ruler_flag = ruler_is_dip
+		clr_ruler_flag = ruler_is_mil
+	}
+	option = {
+		name = "EVTOPTC700"	# A diplomat
+		ai_chance = { 
+			factor = 20 
+			modifier = {
+				factor = 0
+				AND = {
+					NOT = { faction_in_power = mr_traders }
+					NOT = { faction_in_power = rr_royalists }
+					NOT = { faction_in_power = pr_smugglers }
+				}
+			}	
+		}
+		if = {
+			limit = { republic_with_female_rulers_trigger = yes }
+			define_ruler = {
+				dip = 2
+				adm = -1
+				mil = -1
+				random_gender = yes # Allows random gender for republics
+			}
+		}
+		else = {
+			define_ruler = {
+				dip = 2
+				adm = -1
+				mil = -1
+			}
+		}
+		
+		if = {
+			limit = { 
+				AND = {
+					NOT = { faction_in_power = mr_traders }
+					NOT = { faction_in_power = rr_royalists }
+					NOT = { faction_in_power = pr_smugglers }
+				}
+			}
+			add_scaled_republican_tradition = -5
+		}
+		
+		add_karma = 10
+		clr_ruler_flag = ruler_is_adm
+		set_ruler_flag = ruler_is_dip
+		clr_ruler_flag = ruler_is_mil			
+	}
+	option = {
+		name = "EVTOPTD700"	# A military man
+		ai_chance = { 
+			factor = 20 
+			modifier = {
+				factor = 0
+				AND = {
+					NOT = { faction_in_power = mr_aristocrats }
+					NOT = { faction_in_power = rr_girondists }
+					NOT = { faction_in_power = pr_captains }
+				}
+			}	
+		}
+		if = {
+			limit = { republic_with_female_rulers_trigger = yes }
+			define_ruler = {
+				mil = 2
+				adm = -1
+				dip = -1	
+				random_gender = yes # Allows random gender for republics
+			}
+		}
+		else = {
+			define_ruler = {
+				mil = 2
+				adm = -1
+				dip = -1	
+			}
+		}
+		
+		if = {
+			limit = { 
+				AND = {
+					NOT = { faction_in_power = mr_aristocrats }
+					NOT = { faction_in_power = rr_girondists }
+					NOT = { faction_in_power = pr_captains }
+				}
+			}
+			add_scaled_republican_tradition = -5
+		}
+		
+		add_karma = 10
+		clr_ruler_flag = ruler_is_adm
+		clr_ruler_flag = ruler_is_dip
+		set_ruler_flag = ruler_is_mil
+	}
+	option = { # Nepotism choice, re-electing within dynasty
+		name = "EVTOPTE700"
+		trigger = {
+			has_government_attribute = enables_nepotism
+		}
+		ai_chance = { factor = 10 }
+		if = {
+			limit = {
+				has_country_flag = strengthened_signoria_flag
+			}
+			custom_tooltip = strengthened_signoria_election_tt
+			clr_country_flag = strengthened_signoria_flag
+		}
+		else = {
+			add_scaled_republican_tradition = -4
+		}
+		if = {
+			limit = { 
+				republic_with_female_rulers_trigger = yes
+				NOT = { has_reform = signoria_reform }
+			}
+			define_ruler = {
+				mil = -2
+				adm = -2
+				dip = -2
+				min_age = 30
+				max_age = 50
+				name = "lastname"
+				random_gender = yes # Allows random gender for republics
+			}
+		}
+		else_if = {
+			limit = { 
+				republic_with_female_rulers_trigger = yes
+				has_reform = signoria_reform
+			}
+			define_ruler = {
+				min_age = 30
+				max_age = 50
+				name = "lastname"
+				random_gender = yes # Allows random gender for republics
+			}
+		}
+		else_if = {
+			limit = { 
+				has_reform = signoria_reform
+			}
+			define_ruler = {
+				min_age = 30
+				max_age = 50
+				name = "lastname"
+				random_gender = yes # Allows random gender for republics
+			}
+		}
+		else = {
+			define_ruler = {
+				mil = -2
+				adm = -2
+				dip = -2
+				min_age = 30
+				max_age = 50
+				name = "lastname"
+			}
+		}
+		if = {
+			limit = { 
+				has_faction = mr_aristocrats 
+			}
+			add_faction_influence = {
+				faction = mr_aristocrats
+				influence = 10
+			}	
+			clr_ruler_flag = ruler_is_adm
+			clr_ruler_flag = ruler_is_dip
+			set_ruler_flag = ruler_is_mil			
+		}
+	}
+}
+

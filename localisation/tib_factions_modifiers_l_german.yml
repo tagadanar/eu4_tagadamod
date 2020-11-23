@@ -1,0 +1,34 @@
+﻿l_german: 
+ tib_adm_a:0 "Ernennung aufgrund von Leistung"
+ tib_dip_a:0 "Ernennung aufgrund von Spenden"
+ tib_mil_a:0 "Ernennung aufgrund von Eigentum"
+
+ tib_adm_b:0 "Förderung nationaler Produkte im Ausland"
+ tib_dip_b:0 "Förderung von Geschäftsbeziehungen"
+ tib_mil_b:0 "Förderung von Kultur und Tradition"
+
+ tib_adm_c:0 "Moralischer Schwerpunkt"
+ tib_dip_c:0 "Schwerpunkt Marine"
+ tib_mil_c:0 "Schwerpunkt Disziplin"
+ 
+ tib_small_trade_income:0 "Kleines anteiliges Handelseinkommen"
+ tib_moderate_trade_income:0 "Moderate anteilige Handelserträge"
+ tib_large_trade_income:0 "Großes anteiliges Handelseinkommen"
+ tib_dominant_trade_income:0 "Dominante anteilige Handelseinkommen"
+ 
+ tib_small_production_income:0 "Kleines anteiliges Produktionseinkommen"
+ tib_moderate_production_income:0 "Moderates anteiliges Produktionseinkommen"
+ tib_large_production_income:0 "Großes anteiliges Produktionseinkommen"
+ tib_dominant_production_income:0 "Dominantes proportionales Produktionseinkommen"
+ 
+ tib_coalition_guilds:0 "Bilden Sie eine Koalition mit den Gilden. Ihre Stände werden dadurch nicht illoyaler, sondern gewinnen mehr Einfluss."
+ tib_coalition_jacobins:0 "Bilden Sie eine Koalition mit den Jakobinern.\nIhre Stände werden dadurch nicht illoyaler, sondern gewinnen mehr Einfluss."
+ tib_coalition_buccaneers:0 "Bilden Sie eine Koalition mit den Buccaneers.\nIhre Stände werden dadurch nicht illoyaler, sondern gewinnen mehr Einfluss."
+ 
+ tib_coalition_traders:0 "Bilden Sie eine Koalition mit den Händlern.\nIhre Stände werden dadurch nicht illoyaler, sondern gewinnen mehr Einfluss."
+ tib_coalition_royalists:0 "Bilden Sie eine Koalition mit den Königstreuen.\nIhre Stände werden dadurch nicht illoyaler, sondern gewinnen mehr Einfluss."
+ tib_coalition_smugglers:0 "Bilden Sie eine Koalition mit den Schmugglern.\nIhre Stände werden dadurch nicht illoyaler, sondern gewinnen mehr Einfluss."
+ 
+ tib_coalition_aristocrats:0 "Bilden Sie eine Koalition mit den Aristokraten.\nIhre Stände werden dadurch nicht illoyaler, sondern gewinnen mehr Einfluss."
+ tib_coalition_girondists:0 "Bilden Sie eine Koalition mit den Girondisten.\nIhre Stände werden dadurch nicht illoyaler, sondern gewinnen mehr Einfluss."
+ tib_coalition_captains:0 "Bilden Sie eine Koalition mit den Kapitänen.\nIhre Stände werden dadurch nicht illoyaler, sondern gewinnen mehr Einfluss."

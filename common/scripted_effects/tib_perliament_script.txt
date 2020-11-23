@@ -1,0 +1,31 @@
+tib_parliament_election_yearly = {
+	if = {
+		limit = { has_country_flag = tib_parliament_set }
+		
+		change_variable = { which = tib_parliamentary_cycle value = 1 }
+		
+		if = {
+			limit = { check_variable = { which = tib_parliamentary_cycle value = 4 } }
+			
+			if = { 
+				limit = { NOT = { has_country_flag = tib_election_in_progress } }
+				country_event = {
+					id = tib_election.01
+					days = 0
+				}
+			}
+			
+			set_variable = { which = tib_parliamentary_cycle value = 0 }
+		}
+	}
+}
+
+tib_add_faction_influence = {
+	if = {
+		limit = { has_faction = $FACTION$ }
+		add_faction_influence = {
+			faction = $FACTION$
+			influence = 10
+		}
+	}
+}

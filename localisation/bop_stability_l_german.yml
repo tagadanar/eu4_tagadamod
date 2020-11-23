@@ -1,0 +1,38 @@
+﻿l_german: 
+ DISASTERS:0 "Stabilitätsfortschritte und Katastrophen"
+
+ bop_stability_progress:0 "Fortschritte bei der Stabilität"
+ 
+ DESC_BOP_STABILITY_PROGRESS:0 "\nAktuelle Stabilitätsfortschritte: §Y[Root.current_stab.GetValue]§!\n\n Positiver Schwellenwert: §G[Root.threashold_stab_up.GetValue]§!\n Negativer Schwellenwert: §R[Root.threashold_stab_down.GetValue]§!\n §gWenn eine Schwelle erreicht wird, gewinnt oder verliert das Land entsprechend an Stabilität (bei einem Gewinn von +3 gewinnt es 100 £adm£ stattdessen). Die positive Schwelle wird durch den Stabilitätskosten-Modifikator modifiziert.§!\n\nAktueller Fortschrittsgewinn: §G[Root.total_estates.GetValue]§!\n Von Nachlässen: §Y[Root.prog_estates_mod.GetValue]§!\n *§Y[Root.prog_estates.GetValue]§! modifiziert durch §Yx[Root.absol_estates.GetValue]§! von §Y[Root.tib_absolutism.GetValue]§! Absolutismus\n Von der Herrscher-Fähigkeit: §Y[Root.prog_mana_mod.GetValue]§!\n *§Y[Root.prog_mana.GetValue]§! modifiziert von §Yx[Root.absol_mana.GetValue]§! von §Y[Root.tib_absolutism.GetValue]§! Absolutismus\n\n §gDer Stabilitätsfortschritt ist von mehreren Faktoren abhängig:\n-Die Fähigkeiten des Herrschers in £adm£, £dip£ und £mil£ gibt von§! §R-0.3§! §gan§! §G0.3§! §gFortschritt für jede Kategorie.\n-Alle 20% Einfluss von Nachlässen gibt§! §Y1§! §gFortschritt,§! §Gloyal§! §gStände erhöht den Fortschritt in Richtung Stabilität,§! §Rilloyal§! §verringert es. Der Durchschnitt dieses Wertes für jeden vorhandenen Nachlass ist der Fortschrittswert.\n-Absolutismus modifiziert Gewinn oder Verlust von Herrscher-Fähigkeiten um bis zu§! §Y+50%,§! §von Ländereien um bis zu§! §Y-50%.§!"
+ 
+ DESC_BOP_STABILITY_NEG_PROGRESS:0 "\nDer gegenwärtige Stabilitätsfortschritt ist §RNgative§!!\nAktuelle Stabilitätsfortschritte: §Y[Root.current_stab.GetValue]§!\n\n Positiver Schwellenwert: §G[Root.threashold_stab_up.GetValue]§!\n Negativer Schwellenwert: §R[Root.threashold_stab_down.GetValue]§!\n §gWenn eine Schwelle erreicht wird, gewinnt oder verliert das Land entsprechend an Stabilität (bei einem Gewinn von +3 gewinnt es stattdessen 100 £adm£). Die positive Schwelle wird durch den Stabilitätskosten-Modifikator modifiziert.§!\n\nAktueller Fortschrittsgewinn: §R[Root.total_estates.GetValue]§!\n Von Nachlässen: §Y[Root.prog_estates_mod.GetValue]§!\n *§Y[Root.prog_estates.GetValue]§! modifiziert durch §Y[Root.absol_estates.GetValue]§! von §Y[Root.tib_absolutism.GetValue]§! Absolutismus\n Von Herrscher-Fähigkeiten: §Y[Root.prog_mana_mod.GetValue]§!\n *§Y[Root.prog_mana.GetValue]§! modifiziert durch §Y[Root.absol_mana.GetValue]§! von §Y[Root.tib_absolutism.GetValue]§! Absolutismus\n\n §gDer Stabilitätsfortschritt ist von mehreren Faktoren abhängig:\n-Die Fähigkeiten des Herrschers in £adm£, £dip£ und £mil£ geben von§! §R-0.3§! §gauf§! §G0.3§! §gFortschritt für jede Kategorie.\n-Alle 20% Einfluss von Nachlässen gibt§! §Y1§! §gFortschritt,§! §Gloyale§! §gStände erhöht den Fortschritt in Richtung Stabilität,§! §Rdisloyal§! §Lässt sie nach. Der Durchschnitt dieses Wertes für jeden vorhandenen Stand ist der Fortschrittswert.\n -Absolutismus modifiziert Gewinn oder Verlust von Herrscher-Fähigkeiten um bis zu§! §Y+50%,§! §von Stände um bis zu§! §Y-50%.§!"
+ 
+ 
+
+ tib_adm_a:0 "Ernennung aufgrund von Leistung"
+ tib_dip_a:0 "Ernennung aufgrund von Spenden"
+ tib_mil_a:0 "Ernennung aufgrund von Eigentum"
+
+ tib_adm_b:0 "Förderung nationaler Produkte im Ausland"
+ tib_dip_b:0 "Förderung von Geschäftsbeziehungen"
+ tib_mil_b:0 "Förderung von Kultur und Tradition"
+
+ tib_adm_c:0 "Moralischer Schwerpunkt"
+ tib_dip_c:0 "Schwerpunkt Marine"
+ tib_mil_c:0 "Schwerpunkt Disziplin"
+ 
+ 
+ 
+ 
+ 
+ tib_coalition_guilds:0 "Koalition mit den Gilden bilden.\nIhre Stände wird dadurch nicht illoyaler, sondern wird mehr Einfluss gewinnen."
+ tib_coalition_jacobins:0 "Koalition mit den Jakobinern bilden.\nIhre Stände wird dadurch nicht illoyaler, sondern wird mehr Einfluss gewinnen."
+ tib_coalition_buccaneers:0 "Bilden Sie eine Koalition mit den Freibeutern.\nIhre Stände wird dadurch nicht illoyaler, sondern wird mehr Einfluss gewinnen."
+ 
+ tib_coalition_traders:0 "Koalition mit den Händlern bilden.\nIhre Stände wird dadurch nicht illoyaler, sondern wird mehr Einfluss gewinnen."
+ tib_coalition_royalists:0 "Kolation mit dem Monarchisten bilden\nIhre Stände wird dadurch nicht illoyaler, sondern wird mehr Einfluss gewinnen."
+ tib_coalition_smugglers:0 "Kolloation mit dem Schmuglern bilden\nIhre Stände wird dadurch nicht illoyaler, sondern wird mehr Einfluss gewinnen."
+ 
+ tib_coalition_aristocrats:0 "Bilden Sie eine Koalition mit den Aristokraten.\nIhre Stände wird dadurch nicht illoyaler, sondern wird mehr Einfluss gewinnen."
+ tib_coalition_girondists:0 "Bilden Sie eine Koalition mit den Girondisten.\nIhre Stände wird dadurch nicht illoyaler, sondern wird mehr Einfluss gewinnen."
+ tib_coalition_captains:0 "Bilden Sie eine Koalition mit den Kapitänen.\nIhre Stände wird dadurch nicht illoyaler, sondern wird mehr Einfluss gewinnen."

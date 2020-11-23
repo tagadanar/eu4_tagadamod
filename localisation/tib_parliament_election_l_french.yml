@@ -1,0 +1,47 @@
+﻿l_french: 
+ tib_election.01.t:0 "Elections parlementaire"
+ tib_election.01.d:0 "Nos élections parlementaire sont planifiés pour cette année. Des représentants de tout le pays mobilisent leur électorat, tenant des discours sur les problèmes de la nation."
+ tib_election.01.a:0 "Que l'électorat choisisse judicieusement."
+ 
+ tib_election.13.t:0 "Elections - Débat de politique interne"
+ tib_election.13.d:0 "Les candidats du parlement sont bloqués dans un débat sur la politique interne de notre nation. En particulier, chaque faction a sa propre vision sur la façon dont la bureaucracie devrait s'organiser face aux nombreuses tâches administratives. Quel méthode devrions nous choisir?"
+ tib_election.13.a:0 "Basé sur la performance"
+ tib_election.13.b:0 "Basé sur les donations"
+ tib_election.13.c:0 "Basé sur la propriété"
+ 
+ tib_election.14.t:0 "Elections - Débat diplomatique"
+ tib_election.14.d:0 "Ce que la nation devrait prioriser à l'étranger est devenu un débat enflammer ces derniers temps. Différentes approches basés sur les différents secteurs de notre force de travail semblent se distinguer. Laquelle devrions nous favoriser?"
+ tib_election.14.a:0 "Promouvoir les produits nationnaux à l'étranger"
+ tib_election.14.b:0 "Promouvoir les relations commerciales"
+ tib_election.14.c:0 "Promouvoir notre culture et nos traditions"
+ 
+ tib_election.15.t:0 "Elections - Débat militaire"
+ tib_election.15.d:0 "La question militaire est toujours un sujet important, notre nation ne pouvant apparaitre faible aux yeux de nos rivaux. Il existe cependant des divergences sur ce que nous devrions prioriser."
+ tib_election.15.a:0 "Focus sur le moral"
+ tib_election.15.b:0 "Focus sur la flotte"
+ tib_election.15.c:0 "Focus sur la discipline"
+ 
+ tib_election.12.t:0 "Fin des élections"
+ tib_election.12.d:0 "Ce fut une période de débats enflammés, mais le jour de l'élection est arrivé. Ceux qui en ont le droit ont choisit leur représentant pour le prochain mandat. Maintenant de nombreuses négociations ont lieux dans les antichambres du parlement. Même les anciens rivaux mettent parfois leurs différences de côté pour former une majorité stable."
+ tib_election.12.a:0 "Nous avons la majorité"
+ tib_election.12.b:0 "Nous devons faire des concessions"
+ 
+ 
+ tib_coalition_guilds:0 "Former une coalition avec les Corporatistes.\nEn conséquence, leur ordre ne sera plus déloyal, mais aura plus d'influence ."
+ tib_coalition_jacobins:0 "Former une coalition avec les Jacobins.\nEn conséquence, leur ordre ne sera plus déloyal, mais aura plus d'influence."
+ tib_coalition_buccaneers:0 "Former une coalition avec les Boucaniers.\nEn conséquence, leur ordre ne sera plus déloyal, mais aura plus d'influence."
+ 
+ tib_coalition_traders:0 "Former une coalition avec les Marchants.\nEn conséquence, leur ordre ne sera plus déloyal, mais aura plus d'influence."
+ tib_coalition_royalists:0 "Former une coalition avec les Royalistes.\nEn conséquence, leur ordre ne sera plus déloyal, mais aura plus d'influence."
+ tib_coalition_smugglers:0 "Former une coalition avec les Contrebandiers.\nEn conséquence, leur ordre ne sera plus déloyal, mais aura plus d'influence."
+ 
+ tib_coalition_aristocrats:0 "Former une coalition avec les Aristocrates.\nEn conséquence, leur ordre ne sera plus déloyal, mais aura plus d'influence."
+ tib_coalition_girondists:0 "Former une coalition avec les Girondins.\nEn conséquence, leur ordre ne sera plus déloyal, mais aura plus d'influence."
+ tib_coalition_captains:0 "Former une coalition avec les Captaines.\nEn conséquence, leur ordre ne sera plus déloyal, mais aura plus d'influence."
+ 
+ 
+ tib_election.16.t:0 "Motion de censure"
+ tib_election.16.d:0 "Il y a eu beaucoup d'agitation au parlement récemment, la faction dirigeante a perdu beaucoup de soutient, ils ont perdu la majorité au parlement, permettant à l'opposition d'organiser une motion de censure contre le premier ministre. Il peut accepter cette motion et organiser une nouvelle élection, ou ouvrir des négociations avec les autres factions pour tenter de former une nouvelle majorité."
+ tib_election.16.a:0 "Commencer les négociations pour former une nouvelle majorité"
+ tib_election.16.b:0 "Organiser de nouvelles élections"
+ 

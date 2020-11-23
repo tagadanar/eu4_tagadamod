@@ -1,0 +1,20 @@
+# faction_with_power = {
+	# faction_in_power = $FACTION$
+	# faction_influence = { 
+		# faction = $FACTION$
+		# influence = $INF$
+	# } 
+# }
+
+tib_absolutism_zeal = {
+	OR = {
+		AND = {
+			NOT = { uses_revolutionary_zeal = yes }
+			absolutism = $VALUE$
+		}
+		AND = {
+			uses_revolutionary_zeal = yes
+			revolutionary_zeal = $VALUE$
+		}
+	}
+}

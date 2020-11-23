@@ -1,0 +1,187 @@
+
+
+tib_reduce_inflation_privilege = {
+	icon = privilege_give_money
+	is_valid = {
+	}
+	can_select = {
+		inflation = 5
+		adm_power = 75
+		NOT = { has_country_modifier = tib_reduce_inflation }
+	}
+	on_granted = {
+		add_adm_power = -75
+		add_country_modifier = {
+			name = tib_reduce_inflation
+			duration = 730
+		}
+	}
+	on_revoked = {
+	}
+	on_invalid = {
+	}
+	penalties = {
+	}
+	benefits = {
+	}
+	cooldown_years = 2
+	on_cooldown_expires = {
+		country_event = { id = tib_estates_modifiers.1 }
+	}
+	ai_will_do = { 
+		factor = 10
+		modifier = {
+			factor = 0
+			NOT = { inflation = 8 }
+		}
+	}
+}
+
+tib_reduce_we_privilege = {
+	icon = privilege_lighten_dhimmi_tax_burden
+	is_valid = {
+	}
+	can_select = {
+		war_exhaustion = 5
+		dip_power = 75
+		NOT = { has_country_modifier = tib_reduce_we }
+	}
+	on_granted = {
+		add_dip_power = -75
+		add_country_modifier = {
+			name = tib_reduce_we
+			duration = 730
+		}
+	}
+	on_revoked = {
+	}
+	on_invalid = {
+	}
+	penalties = {
+	}
+	benefits = {
+	}
+	cooldown_years = 2
+	on_cooldown_expires = {
+		country_event = { id = tib_estates_modifiers.2 }
+	}
+	ai_will_do = { 
+		factor = 10
+		modifier = {
+			factor = 0
+			NOT = { war_exhaustion = 8 }
+		}
+	}
+}
+
+tib_reduce_we_privilege_burghers = {
+	icon = privilege_give_money
+	is_valid = {
+		NOT = { has_estate = estate_church }
+	}
+	can_select = {
+		war_exhaustion = 5
+		dip_power = 75
+		NOT = { has_country_modifier = tib_reduce_we }
+	}
+	on_granted = {
+		add_dip_power = -75
+		add_country_modifier = {
+			name = tib_reduce_we
+			duration = 730
+		}
+	}
+	on_revoked = {
+	}
+	on_invalid = {
+	}
+	penalties = {
+	}
+	benefits = {
+	}
+	cooldown_years = 2
+	on_cooldown_expires = {
+		country_event = { id = tib_estates_modifiers.2 }
+	}
+	ai_will_do = { 
+		factor = 10
+		modifier = {
+			factor = 0
+			NOT = { war_exhaustion = 8 }
+		}
+	}
+}
+
+tib_reduce_inflation_tribe_privilege = {
+	icon = privilege_give_money
+	is_valid = {
+	}
+	can_select = {
+		inflation = 5
+		adm_power = 75
+		NOT = { has_country_modifier = tib_reduce_inflation_tribe }
+	}
+	on_granted = {
+		add_adm_power = -75
+		add_country_modifier = {
+			name = tib_reduce_inflation_tribe
+			duration = 1825
+		}
+	}
+	on_revoked = {
+	}
+	on_invalid = {
+	}
+	penalties = {
+	}
+	benefits = {
+	}
+	cooldown_years = 5
+	on_cooldown_expires = {
+		remove_estate_privilege = tib_reduce_inflation_tribe_privilege
+	}
+	ai_will_do = { 
+		factor = 10
+		modifier = {
+			factor = 0
+			NOT = { inflation = 8 }
+		}
+	}
+}
+
+tib_reduce_we_tribe_privilege = {
+	icon = privilege_lighten_dhimmi_tax_burden
+	is_valid = {
+	}
+	can_select = {
+		war_exhaustion = 5
+		dip_power = 75
+		NOT = { has_country_modifier = tib_reduce_we_tribe }
+	}
+	on_granted = {
+		add_dip_power = -75
+		add_country_modifier = {
+			name = tib_reduce_we_tribe
+			duration = 1825
+		}
+	}
+	on_revoked = {
+	}
+	on_invalid = {
+	}
+	penalties = {
+	}
+	benefits = {
+	}
+	cooldown_years = 5
+	on_cooldown_expires = {
+		remove_estate_privilege = tib_reduce_we_tribe_privilege
+	}
+	ai_will_do = { 
+		factor = 10
+		modifier = {
+			factor = 0
+			NOT = { war_exhaustion = 8 }
+		}
+	}
+}

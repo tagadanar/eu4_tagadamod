@@ -1,0 +1,29 @@
+﻿l_english: 
+ tib_str_gov_interaction:0 "Strengthen Government"
+ tib_str_gov:0 "Government Strengthened"
+ 
+ tib_reduce_inflation_privilege:0 "Regulate Banking"
+ tib_reduce_inflation_privilege_desc:0 "Inflation has been running rampant in our nation, we need to take measures to manage it. By regulating banks and achieving a better control in the circulation of our currency, we might be able to do it."
+ tib_reduce_inflation:0 "Regulated Banking"
+ 
+ tib_reduce_we_privilege:0 "Open Relief Fund"
+ tib_reduce_we_privilege_desc:0 "Our nation is torn by war, and our population grows weary. With assistance of the clergy, we'll be able to run a relief fund to help those in the direst situation."
+ tib_reduce_we:0 "Relief Fund"
+ 
+ tib_reduce_we_privilege_burghers:0 "Open Relief Fund"
+ tib_reduce_we_privilege_burghers_desc:0 "Our nation is torn by war, and our population grows weary. With assistance of the our wealthiest citizens, we'll be able to run a relief fund to help those in the direst situation."
+ 
+ tib_reduce_inflation_tribe_privilege:0 "Pardon Interclan Debt"
+ tib_reduce_inflation_tribe_privilege_desc:0 "The monetary debt each clan owes to one another is one of the key factors in the rising prices of our internal commerce, as these are reverted into taxation on everything produced on the land. By reaching an agreement of lifting and pardoning these debts, we might be able to stabilize the situation."
+ tib_reduce_inflation_tribe:0 "Interclan Debt Pardoned"
+ 
+ tib_reduce_we_tribe_privilege:0 "Allow Use of Chief's Land"
+ tib_reduce_we_tribe_privilege_desc:0 "War weighs heavily on our brother's minds, by allowing the usage of our clan's personal land for their own refuge and subsistance, we seek to ease their suffering."
+ tib_reduce_we_tribe:0 "Chief's Land Usage Allowed"
+ 
+ 
+ EST_VAL_STATIST_IN_POWER_TIB:0 "Statists in Power: §Y10%§!"
+ EST_VAL_CITIZENRY_REFORM_TIB:0 "Citizenry Electorate: §Y10%§!"
+ EST_VAL_MONARCHIST_IN_POWER_TIB:0 "Monarchists in Power: §Y10%§!"
+ EST_VAL_LANDHOLDERS_REFORM_TIB:0 "Landholders Electorate: §Y10%§!"
+ EST_VAL_RULER_LOYALTY_TIB:0 "Ruler's Faction: §Y10%§!"

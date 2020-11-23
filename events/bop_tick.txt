@@ -1,0 +1,59 @@
+namespace = bop_tick
+
+country_event = {
+	id = bop_tick.01
+	
+	hidden = yes
+	
+	trigger = {
+		OR = {
+			AND = {
+				has_country_flag = monthly_tick
+				OR = {
+					AND = {	is_month = 0 NOT = { is_month = 1 } }
+					AND = {	is_month = 2 NOT = { is_month = 3 } }
+					AND = {	is_month = 4 NOT = { is_month = 5 } }
+					AND = {	is_month = 6 NOT = { is_month = 7 } }
+					AND = {	is_month = 8 NOT = { is_month = 9 } }
+					AND = {	is_month = 10 NOT = { is_month = 11 } }
+				}
+			}
+			AND = {
+				NOT = { has_country_flag = monthly_tick }
+				OR = {
+					AND = {	is_month = 1 NOT = { is_month = 2 }}
+					AND = {	is_month = 3 NOT = { is_month = 4 }}
+					AND = {	is_month = 5 NOT = { is_month = 6 }}
+					AND = {	is_month = 7 NOT = { is_month = 8 }}
+					AND = {	is_month = 9 NOT = { is_month = 10 }}
+					is_month = 11
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = { days = 0 }
+	
+	immediate = {
+		if = {
+			limit = { NOT = { has_country_flag = monthly_tick } }
+			set_country_flag = monthly_tick
+		}	
+		else = {
+			clr_country_flag = monthly_tick
+		
+		}
+
+		#MONTHLY EFFECTS
+		stability_monthly = yes
+		
+		#YEARLY EFFECTS
+		if = { limit = { AND = { is_month = 0 NOT = { is_month = 1 } } }
+			tib_parliament_election_yearly = yes
+		}
+	}
+	
+	option = {
+		ai_chance = { factor = 100 }
+	}
+}

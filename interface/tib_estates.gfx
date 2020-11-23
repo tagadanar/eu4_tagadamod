@@ -1,0 +1,8 @@
+spriteTypes = {	
+
+	spriteType = {
+		name = "GFX_tib_str_gov_interaction"
+		texturefile = "gfx/interface/estates/tib_str_gov_interaction.dds"
+	}
+
+}

@@ -1,0 +1,38 @@
+﻿l_french: 
+ DISASTERS:0 "Stability Progress and Disasters"
+
+ bop_stability_progress:0 "Stability Progress"
+ 
+ DESC_BOP_STABILITY_PROGRESS:0 "\nAvancement de la stabilité: §Y[Root.current_stab.GetValue]§!\n\n Seuil Positif: §G[Root.threashold_stab_up.GetValue]§!\n Seuil Négatif: §R[Root.threashold_stab_down.GetValue]§!\n §gSi un seuil est atteint, le pays gagnera ou perdra 1 de stabilité (à +3, gain de 100 £adm£ à la place). Le seuil positif est modifié par les modificateurs du coût de la stabilité.§!\n\nGain par mois: §G[Root.total_estates.GetValue]§!\n Loyauté des ordres: §Y[Root.prog_estates_mod.GetValue]§!\n *§Y[Root.prog_estates.GetValue]§! modifié par §Yx[Root.absol_estates.GetValue]§! en raison de §Y[Root.tib_absolutism.GetValue]§! Absolutisme\n Compétence du dirigeant: §Y[Root.prog_mana_mod.GetValue]§!\n *§Y[Root.prog_mana.GetValue]§! modifié par §Yx[Root.absol_mana.GetValue]§! en raison de §Y[Root.tib_absolutism.GetValue]§! Absolutisme\n\n §gL'avancement du gain de stabilité dépend de plusieurs facteurs:\n-Les compétences du dirigeant en £adm£, £dip£ et £mil£ donnent de §! §R-0.3§! §gà§! §G0.3§! §g par mois pour chaque catégorie. (0£adm£ 0£dip£ 0£mil£ donne -0.9, 6£adm£ 6£dip£ 6£mil£ donne +0.9)\n-Chaque 20% d'influence d'un ordre donne§! §Y0.25§! §gavancement,§! les ordres §Gloyaux§! §gaugmente l'avancement vers la stabilité,§! les §Rdéloyaux§! §gle réduise. La somme donne la valeur de l'avancement.\n-La stabilité tend vers 0, chaque point augmentant de l'inverse l'avancement par mois.\n-L'absolutisme augmente l'avancement dû aux compétence du dirigeant jusqu'à §! §Y+100%,§! §get réduit celui des ordres jusqu'à§! §Y-50%.§! pour 100 d'absolutisme"
+ 
+ DESC_BOP_STABILITY_NEG_PROGRESS:0 "\nAvancement de la stabilité §RNégatif§!!\nAvancement actuel: §Y[Root.current_stab.GetValue]§!\n\n Seuil Positif: §G[Root.threashold_stab_up.GetValue]§!\n Seuil Négatif: §R[Root.threashold_stab_down.GetValue]§!\n §gSi un seuil est atteint, le pays gagnera ou perdra1 de stabilité (à +3, gain de 100 £adm£ à la place). Le seuil positif est modifié par les modificateurs du coût de la stabilité.§!\n\nGain par mois: §R[Root.total_estates.GetValue]§!\n Loyauté des ordres: §Y[Root.prog_estates_mod.GetValue]§!\n *§Y[Root.prog_estates.GetValue]§! modifié par §Y[Root.absol_estates.GetValue]§! en raison de §Y[Root.tib_absolutism.GetValue]§! Absolutisme\n Compétence du dirigeant: §Y[Root.prog_mana_mod.GetValue]§!\n *§Y[Root.prog_mana.GetValue]§! modifié par §Y[Root.absol_mana.GetValue]§! en raison de §Y[Root.tib_absolutism.GetValue]§! Absolutisme\n\n §gL'avancement du gain de la stabilité dépend de plusieurs facteurs:\n-Les compétences du dirigeant en £adm£, £dip£ et £mil£ donnent de§! §R-0.3§! §gà§! §G0.3§! §gavancement pour chaque catégorie. (0£adm£ 0£dip£ 0£mil£ donne -0.9, 6£adm£ 6£dip£ 6£mil£ donne +0.9)\n-Chaque 20% d'influence d'un ordre donne§! §Y0.25§! §gavancement,§! les ordres §Gloyaux§! §gaugmente l'avancement vers la stabilité,§! les §Rdéloyaux§! §gle réduise. La somme donne la valeur de l'avancement.\n-La stabilité tend vers 0, chaque point augmentant de l'inverse l'avancement par mois.\n-L'absolutisme augmente l'avancement dû aux compétence du dirigeant jusqu'à §! §Y+100%,§! §get réduit celui des ordres jusqu'à§! §Y-50%.§! pour 100 d'absolutisme"
+ 
+ 
+
+ tib_adm_a:0 "Nomination basé sur la Performance"
+ tib_dip_a:0 "Nomination basé sur les Donations"
+ tib_mil_a:0 "Nomination basé sur la Propriété"
+
+ tib_adm_b:0 "Promotion des Produits Nationnaux à l'Etranger"
+ tib_dip_b:0 "Promotion des Relations Commerciales"
+ tib_mil_b:0 "Promotion de la Culture et des Traditions"
+
+ tib_adm_c:0 "Focus sur le moral"
+ tib_dip_c:0 "Focus sur la flotte"
+ tib_mil_c:0 "Focus sur la discipline"
+ 
+ 
+ 
+ 
+ 
+ tib_coalition_guilds:0 "Former une coalition avec les Corporatistes.\nEn conséquence, leur ordre ne sera plus déloyal, mais aura plus d'influence ."
+ tib_coalition_jacobins:0 "Former une coalition avec les Jacobins.\nEn conséquence, leur ordre ne sera plus déloyal, mais aura plus d'influence."
+ tib_coalition_buccaneers:0 "Former une coalition avec les Boucaniers.\nEn conséquence, leur ordre ne sera plus déloyal, mais aura plus d'influence."
+ 
+ tib_coalition_traders:0 "Former une coalition avec les Marchants.\nEn conséquence, leur ordre ne sera plus déloyal, mais aura plus d'influence."
+ tib_coalition_royalists:0 "Former une coalition avec les Royalistes.\nEn conséquence, leur ordre ne sera plus déloyal, mais aura plus d'influence."
+ tib_coalition_smugglers:0 "Former une coalition avec les Contrebandiers.\nEn conséquence, leur ordre ne sera plus déloyal, mais aura plus d'influence."
+ 
+ tib_coalition_aristocrats:0 "Former une coalition avec les Aristocrates.\nEn conséquence, leur ordre ne sera plus déloyal, mais aura plus d'influence."
+ tib_coalition_girondists:0 "Former une coalition avec les Girondins.\nEn conséquence, leur ordre ne sera plus déloyal, mais aura plus d'influence."
+ tib_coalition_captains:0 "Former une coalition avec les Captaines.\nEn conséquence, leur ordre ne sera plus déloyal, mais aura plus d'influence."

@@ -1,0 +1,34 @@
+can_reduce_war_exhaustion = {
+	condition = {
+		tooltip = "CAN_RELEASE_CN_WE_ARE_AT_WAR"
+		potential = {
+		}
+		allow = {
+			always = no
+		}
+	}
+}
+
+can_reduce_inflation = {
+	condition = {
+		tooltip = "CAN_RELEASE_CN_WE_ARE_AT_WAR"
+		potential = {
+		}
+		allow = {
+			always = no
+		}
+	}
+}
+
+can_increase_stability = {
+	condition = {
+		tooltip = "CAN_RELEASE_CN_WE_ARE_AT_WAR"
+		potential = {
+		}
+		allow = {
+			always = no
+		}
+	}
+	
+}
+

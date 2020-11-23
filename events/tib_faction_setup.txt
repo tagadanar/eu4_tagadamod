@@ -1,0 +1,152 @@
+namespace = tib_faction_setup
+
+country_event = {
+	id = tib_faction_setup.00
+	
+	hidden = yes
+	
+	trigger = {
+		OR = {
+			government = republic
+			has_parliament = yes
+		}
+		NOT = { is_revolutionary_republic_trigger = yes }
+		NOT = { has_reform = pirate_republic_reform }
+		NOT = { has_states_general_mechanic = yes }
+		
+		OR = {
+			NOT = { has_country_flag = tib_factions_set }
+			
+			NOT = { has_faction = mr_aristocrats }
+			NOT = { has_faction = mr_traders }
+			NOT = { has_faction = mr_guilds }
+		}
+	}
+	
+	mean_time_to_happen = { days = 0 }
+	
+	immediate = {
+		if = {
+			limit = { NOT = { has_faction = mr_aristocrats } }
+			add_faction = mr_aristocrats
+		}
+		if = {
+			limit = { NOT = { has_faction = mr_traders } }
+			add_faction = mr_traders
+			add_faction_influence = {
+				faction = mr_traders
+				influence = 30
+			}
+		}
+		if = {
+			limit = { NOT = { has_faction = mr_guilds } }
+			add_faction = mr_guilds
+			add_faction_influence = {
+				faction = mr_guilds
+				influence = 30
+			}
+		}
+		
+		set_country_flag = tib_factions_set
+	}
+	
+	option = {
+		ai_chance = { factor = 100 }
+	}
+}
+
+country_event = {
+	id = tib_faction_setup.01	#parliament setup
+	
+	hidden = yes
+	
+	trigger = {
+		has_parliament = yes
+		has_country_flag = tib_factions_set
+		NOT = { has_country_flag = tib_parliament_set }
+	}
+	
+	mean_time_to_happen = { days = 0 }
+	
+	immediate = {
+		set_variable = {
+			which = tib_parliamentary_cycle
+			value = 2
+		}
+		
+		set_country_flag = tib_parliament_set
+		
+		country_event = {
+			id = tib_election.12
+			days = 0
+		}
+	}
+	
+	option = {
+		ai_chance = { factor = 100 }
+	}
+}
+
+country_event = {
+	id = tib_faction_setup.99
+	
+	hidden = yes
+	
+	trigger = {
+		OR = {
+			AND = {
+				NOT = { government = republic }
+				NOT = { has_parliament = yes }
+			}
+			is_revolutionary_republic_trigger = yes
+			has_reform = pirate_republic_reform 
+			has_states_general_mechanic = yes
+		}
+		
+		has_country_flag = tib_factions_set 
+	}
+	
+	mean_time_to_happen = { days = 0 }
+	
+	immediate = {
+		if = {
+			limit = { has_faction = mr_aristocrats } 
+			remove_faction = mr_aristocrats
+		}
+		if = {
+			limit = { has_faction = mr_traders } 
+			remove_faction = mr_traders
+		}
+		if = {
+			limit = { has_faction = mr_guilds } 
+			remove_faction = mr_guilds
+		}
+		
+		clr_country_flag = tib_factions_set
+	}
+	
+	option = {
+		ai_chance = { factor = 100 }
+	}
+}
+
+country_event = {
+	id = tib_faction_setup.98	#parliament clr
+	
+	hidden = yes
+	
+	trigger = {
+		NOT = { has_parliament = yes }
+		has_country_flag = tib_parliament_set
+	}
+	
+	mean_time_to_happen = { days = 0 }
+	
+	immediate = {
+		clr_country_flag = tib_parliament_set
+	}
+	
+	option = {
+		ai_chance = { factor = 100 }
+	}
+}

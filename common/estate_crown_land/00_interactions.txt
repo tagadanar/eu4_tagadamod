@@ -274,6 +274,13 @@ interaction = {
             loyalty = -20
             short = yes
         }
+		if = {
+			limit = { ai = yes }
+			add_estate_loyalty = {
+				estate = all
+				loyalty = 10
+				short = yes
+			}
 		custom_tooltip = seize_land_rebels_tt
 		if = {
 			limit = {

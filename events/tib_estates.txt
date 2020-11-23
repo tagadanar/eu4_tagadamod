@@ -1,0 +1,47 @@
+
+
+namespace = tib_estates_modifiers
+
+# Extension of Reduce Inflation
+country_event = {
+	id = tib_estates_modifiers.1
+	
+	hidden = yes
+
+	trigger = {
+		has_estate_privilege = tib_reduce_inflation_privilege
+		NOT = { has_country_modifier = tib_reduce_inflation }
+	}
+	
+	mean_time_to_happen = { days = 0 }
+
+	immediate = {
+		remove_estate_privilege = tib_reduce_inflation_privilege
+	}
+	
+	option = {
+		ai_chance = { factor = 100 }
+	}
+}
+# Extension of Reduce WE
+country_event = {
+	id = tib_estates_modifiers.2
+	
+	hidden = yes
+
+	trigger = {
+		has_estate_privilege = tib_reduce_we_privilege
+		NOT = { has_country_modifier = tib_reduce_we }
+	}
+	
+	mean_time_to_happen = { days = 0 }
+
+	immediate = {
+		remove_estate_privilege = tib_reduce_we_privilege
+	}
+	
+	option = {
+		ai_chance = { factor = 100 }
+	}
+}
+

@@ -1,0 +1,47 @@
+﻿l_english: 
+ tib_election.01.t:0 "Parliamentary Elections"
+ tib_election.01.d:0 "Our parliamentary elections are scheduled to happen later this year. Representatives from all sides are mobilizing themselves in campaigns with their electorate, holding meetings and debating our nation's issues."
+ tib_election.01.a:0 "May the electorate choose wisely."
+ 
+ tib_election.13.t:0 "Elections - Internal Policy Debate"
+ tib_election.13.d:0 "Candidates for our parliament have been locked in debate of the internal policies of our nation for the following term. In particular, each faction has its own view on how the bureaucracy should be assembled for the administrative tasks of various kinds. Which method shall we favor?"
+ tib_election.13.a:0 "Based on performance"
+ tib_election.13.b:0 "Based on donations"
+ tib_election.13.c:0 "Based on property"
+ 
+ tib_election.14.t:0 "Elections - Diplomacy Debate"
+ tib_election.14.d:0 "Issues over what our nations should prioritize abroad have been a hot topic in recent debates. Many stances are found, based on many sectors of our workforce, but among them a few issues have found particular adhesion and dispute. Which should we favor?"
+ tib_election.14.a:0 "Promote national products abroad"
+ tib_election.14.b:0 "Promote business relations"
+ tib_election.14.c:0 "Promote our culture and tradition"
+ 
+ tib_election.15.t:0 "Elections - Military Debate"
+ tib_election.15.d:0 "The issue of our military is always an important on to debate over, as our nation can't appear weak and show openings our rivals could exploit. But even with that, there are divergences on what exactly to focus on regarding the armed forces."
+ tib_election.15.a:0 "Focus on the morale"
+ tib_election.15.b:0 "Focus on the navy"
+ tib_election.15.c:0 "Focus on the academy"
+ 
+ tib_election.12.t:0 "End of Elections"
+ tib_election.12.d:0 "It's been an interesting period of debates, but election day is finally upon us. Those who have the right to do so have cast the ballot and chosen their representatives for the next term. Now, a lot of talk and negotiations happens in the backstage. Even former rivals may put aside their diferences to form a stable majority on parliament."
+ tib_election.12.a:0 "We have a majority"
+ tib_election.12.b:0 "We need to conssessions"
+ 
+ 
+ tib_coalition_guilds:0 "Form coalition with the Guilds.\nTheir Estate will not be more disloyal as a result, but will gain more influence."
+ tib_coalition_jacobins:0 "Form coalition with the Jacobins.\nTheir Estate will not be more disloyal as a result, but will gain more influence."
+ tib_coalition_buccaneers:0 "Form coalition with the Buccaneers.\nTheir Estate will not be more disloyal as a result, but will gain more influence."
+ 
+ tib_coalition_traders:0 "Form coalition with the Traders.\nTheir Estate will not be more disloyal as a result, but will gain more influence."
+ tib_coalition_royalists:0 "Form coalition with the Royalists.\nTheir Estate will not be more disloyal as a result, but will gain more influence."
+ tib_coalition_smugglers:0 "Form coalition with the Smugglers.\nTheir Estate will not be more disloyal as a result, but will gain more influence."
+ 
+ tib_coalition_aristocrats:0 "Form coalition with the Aristocrats.\nTheir Estate will not be more disloyal as a result, but will gain more influence."
+ tib_coalition_girondists:0 "Form coalition with the Girondists.\nTheir Estate will not be more disloyal as a result, but will gain more influence."
+ tib_coalition_captains:0 "Form coalition with the Captains.\nTheir Estate will not be more disloyal as a result, but will gain more influence."
+ 
+ 
+ tib_election.16.t:0 "Vote of no Confidence"
+ tib_election.16.d:0 "There's been a lot of turmoil in parliament recently, the ruling faction has lost a lot of support, now leaving them with a minority on the house, leading to the new majorty to make a motion of no confidence against the current PM. He can accept this motion and call for new election, or start negotiations with other MPs to attempt the formation of a new majority."
+ tib_election.16.a:0 "Begin Negotiations to form a new majority"
+ tib_election.16.b:0 "Invoke new elections"
+ 

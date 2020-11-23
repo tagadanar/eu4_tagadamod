@@ -1,0 +1,47 @@
+﻿l_german: 
+ tib_election.01.t:0 "Parlamentswahlen"
+ tib_election.01.d:0 "Unsere Parlamentswahlen sollen noch in diesem Jahr stattfinden. Vertreter aller Seiten mobilisieren sich in Kampagnen mit ihren Wählern, halten Sitzungen ab und debattieren über die Themen unseres Landes."
+ tib_election.01.a:0 "Mögen die Wähler weise wählen."
+ 
+ tib_election.13.t:0 "Wahlen - Debatte über Innenpolitik"
+ tib_election.13.d:0 "Die Kandidaten für unser Parlament sind für die folgende Wahlperiode in die Debatte über die Innenpolitik unserer Nation gesperrt. Insbesondere hat jede Fraktion ihre eigene Auffassung darüber, wie die Bürokratie für die verschiedenen Verwaltungsaufgaben zusammengestellt werden soll. Welche Methode werden wir bevorzugen?"
+ tib_election.13.a:0 "Basierend auf Leistung"
+ tib_election.13.b:0 "Basierend auf Spenden"
+ tib_election.13.c:0 "Basierend auf Eigentum"
+ 
+ tib_election.14.t:0 "Wahlen - Diplomatie-Debatte"
+ tib_election.14.d:0 "Die Frage, welchen Prioritäten unsere Nationen im Ausland Vorrang einräumen sollten, war in den letzten Debatten ein heißes Thema. Es gibt viele Standpunkte, die sich auf viele Sektoren unserer Belegschaft stützen, aber unter ihnen haben einige wenige Fragen besondere Zustimmung und Streitigkeiten gefunden. Welche sollten wir bevorzugen?"
+ tib_election.14.a:0 "Nationale Produkte im Ausland fördern"
+ tib_election.14.b:0 "Förderung von Geschäftsbeziehungen"
+ tib_election.14.c:0 "Unsere Kultur und Tradition fördern"
+ 
+ tib_election.15.t:0 "Wahlen - Militärdebatte"
+ tib_election.15.d:0 "Die Frage unseres Militärs ist immer ein wichtiges Thema, über das wir debattieren müssen, da unsere Nation nicht schwach erscheinen und keine Möglichkeiten aufzeigen darf, die unsere Rivalen ausnutzen könnten. Aber selbst damit gibt es Divergenzen darüber, worauf genau man sich in Bezug auf die Streitkräfte konzentrieren sollte."
+ tib_election.15.a:0 "Fokus auf die Moral"
+ tib_election.15.b:0 "Fokus auf die Marine"
+ tib_election.15.c:0 "Fokus auf die Akademie"
+ 
+ tib_election.12.t:0 "Ende der Wahlen"
+ tib_election.12.d:0 "Es war eine interessante Zeit der Debatten, aber der Wahltag steht endlich vor der Tür. Diejenigen, die das Recht dazu haben, haben den Stimmzettel abgegeben und ihre Vertreter für die nächste Amtszeit gewählt. Jetzt wird hinter der Bühne viel geredet und verhandelt. Selbst ehemalige Rivalen können ihre Differenzen beiseite legen, um eine stabile Mehrheit im Parlament zu bilden."
+ tib_election.12.a:0 "Wir haben eine Mehrheit"
+ tib_election.12.b:0 "Wir brauchen Zugeständnisse"
+ 
+ 
+ tib_coalition_guilds:0 "Bilden Sie eine Koalition mit den Gilden. Ihre Stände werden dadurch nicht illoyaler, sondern gewinnen mehr Einfluss."
+ tib_coalition_jacobins:0 "Bilden Sie eine Koalition mit den Jakobinern.\nIhre Stände werden dadurch nicht illoyaler, sondern gewinnen mehr Einfluss."
+ tib_coalition_buccaneers:0 "Bilden Sie eine Koalition mit den Buccaneers.\nIhre Stände werden dadurch nicht illoyaler, sondern gewinnen mehr Einfluss."
+ 
+ tib_coalition_traders:0 "Bilden Sie eine Koalition mit den Händlern.\nIhre Stände werden dadurch nicht illoyaler, sondern gewinnen mehr Einfluss."
+ tib_coalition_royalists:0 "Bilden Sie eine Koalition mit den Königstreuen.\nIhre Stände werden dadurch nicht illoyaler, sondern gewinnen mehr Einfluss."
+ tib_coalition_smugglers:0 "Bilden Sie eine Koalition mit den Schmugglern.\nIhre Stände werden dadurch nicht illoyaler, sondern gewinnen mehr Einfluss."
+ 
+ tib_coalition_aristocrats:0 "Bilden Sie eine Koalition mit den Aristokraten.\nIhre Stände werden dadurch nicht illoyaler, sondern gewinnen mehr Einfluss."
+ tib_coalition_girondists:0 "Bilden Sie eine Koalition mit den Girondisten.\nIhre Stände werden dadurch nicht illoyaler, sondern gewinnen mehr Einfluss."
+ tib_coalition_captains:0 "Bilden Sie eine Koalition mit den Kapitänen.\nIhre Stände werden dadurch nicht illoyaler, sondern gewinnen mehr Einfluss."
+ 
+ 
+ tib_election.16.t:0 "Misstrauensvotum"
+ tib_election.16.d:0 "Es gab in letzter Zeit viele Unruhen im Parlament, die Regierungsfraktion hat viel Unterstützung verloren, so dass sie jetzt eine Minderheit im Haus hat, was dazu geführt hat, dass die neue Mehrheit einen Misstrauensantrag gegen den derzeitigen Premierminister gestellt hat. Er kann diesen Antrag annehmen und Neuwahlen fordern oder Verhandlungen mit anderen Abgeordneten aufnehmen, um die Bildung einer neuen Mehrheit zu versuchen."
+ tib_election.16.a:0 "Aufnahme von Verhandlungen zur Bildung einer neuen Mehrheit"
+ tib_election.16.b:0 "Neuwahlen einberufen"
+ 

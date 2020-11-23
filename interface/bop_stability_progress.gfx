@@ -1,0 +1,8 @@
+spriteTypes = {
+ spriteType = {
+  name = "GFX_disaster_bop_stability_progress"
+  texturefile = "gfx//interface//disasters//bop_stability_progress.dds"
+  noOfFrames = 3
+  loadType = "INGAME"
+ }
+}

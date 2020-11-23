@@ -1,0 +1,181 @@
+namespace = tib_faction_modifiers
+
+# will adjust and give modifiers to faction influence gain checking different stats
+
+country_event = {
+	id = tib_faction_modifiers.01
+	
+	hidden = yes
+	
+	trigger = {
+		OR = {
+			has_faction = mr_traders
+			has_faction = pr_smugglers
+		}
+		OR = {
+			AND = {
+				NOT = { has_country_modifier = tib_small_trade_income }
+				NOT = { trade_income_percentage = 0.25 }
+			}
+			AND = {
+				NOT = { has_country_modifier = tib_moderate_trade_income }
+				AND = {
+					trade_income_percentage = 0.25
+					NOT = { trade_income_percentage = 0.5 }
+				}
+			}
+			AND = {
+				NOT = { has_country_modifier = tib_large_trade_income }
+				AND = {
+					trade_income_percentage = 0.5
+					NOT = { trade_income_percentage = 0.75 }
+				}
+			}
+			AND = {
+				NOT = { has_country_modifier = tib_dominant_trade_income }
+				trade_income_percentage = 0.75
+			}
+		}
+	}
+	
+	mean_time_to_happen = { days = 0 }
+	
+	immediate = {
+		remove_country_modifier = tib_small_trade_income
+		remove_country_modifier = tib_moderate_trade_income
+		remove_country_modifier = tib_large_trade_income
+		remove_country_modifier = tib_dominant_trade_income
+		
+		if = {
+			limit = { NOT = { trade_income_percentage = 0.25 } }
+			
+			add_country_modifier = {
+				name = tib_small_trade_income
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = { NOT = { trade_income_percentage = 0.5 } }
+			
+			add_country_modifier = {
+				name = tib_moderate_trade_income
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = { NOT = { trade_income_percentage = 0.75 } }
+			
+			add_country_modifier = {
+				name = tib_large_trade_income
+				duration = -1
+			}
+		}
+		else = {
+			add_country_modifier = {
+				name = tib_dominant_trade_income
+				duration = -1
+			}
+		}
+	}
+	
+	option = {
+		ai_chance = { factor = 100 }
+	}
+}
+
+country_event = {
+	id = tib_faction_modifiers.02
+	
+	hidden = yes
+	
+	trigger = {
+		OR = {
+			has_faction = mr_guilds
+			has_faction = pr_buccaneers
+			has_faction = rr_jacobins
+		}
+		OR = {
+			AND = {
+				NOT = { has_country_modifier = tib_small_production_income }
+				NOT = { production_income_percentage = 0.25 }
+			}
+			AND = {
+				NOT = { has_country_modifier = tib_moderate_production_income }
+				AND = {
+					production_income_percentage = 0.25
+					NOT = { production_income_percentage = 0.5 }
+				}
+			}
+			AND = {
+				NOT = { has_country_modifier = tib_large_production_income }
+				AND = {
+					production_income_percentage = 0.5
+					NOT = { production_income_percentage = 0.75 }
+				}
+			}
+			AND = {
+				NOT = { has_country_modifier = tib_dominant_production_income }
+				production_income_percentage = 0.75
+			}
+		}
+	}
+	
+	mean_time_to_happen = { days = 0 }
+	
+	immediate = {
+		remove_country_modifier = tib_small_production_income
+		remove_country_modifier = tib_moderate_production_income
+		remove_country_modifier = tib_large_production_income
+		remove_country_modifier = tib_dominant_production_income
+		
+		if = {
+			limit = { NOT = { production_income_percentage = 0.25 } }
+			
+			add_country_modifier = {
+				name = tib_small_production_income
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = { NOT = { production_income_percentage = 0.5 } }
+			
+			add_country_modifier = {
+				name = tib_moderate_production_income
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = { NOT = { production_income_percentage = 0.75 } }
+			
+			add_country_modifier = {
+				name = tib_large_production_income
+				duration = -1
+			}
+		}
+		else = {
+			add_country_modifier = {
+				name = tib_dominant_production_income
+				duration = -1
+			}
+		}
+	}
+	
+	option = {
+		ai_chance = { factor = 100 }
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

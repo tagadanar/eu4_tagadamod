@@ -1,0 +1,29 @@
+﻿l_french: 
+ tib_str_gov_interaction:0 "Renforcer le gouvernement"
+ tib_str_gov:0 "Gouvernement renforcé"
+ 
+ tib_reduce_inflation_privilege:0 "Réguler les banques"
+ tib_reduce_inflation_privilege_desc:0 "L'inflation prend des proportions inquiétantes, nous devons prendre des mesures. En régulant les banques et en s'assurant un meilleur controle de la circulation de notre monaie, nous pourrions y arriver."
+ tib_reduce_inflation:0 "Banques Régulés"
+ 
+ tib_reduce_we_privilege:0 "Ouvrir un fond de secours"
+ tib_reduce_we_privilege_desc:0 "Notre nation est déchiré par la guerre, et notre population s'épuise. Avec l'aide du clergé, nous pouvons ouvrir un fond de secours pour les plus démunis."
+ tib_reduce_we:0 "Fond de secours"
+ 
+ tib_reduce_we_privilege_burghers:0 "Ouvrir un fond de secours"
+ tib_reduce_we_privilege_burghers_desc:0 "Notre nation est déchiré par la guerre, et notre population s'épuise. Avec l'aide de nos citoyens les plus aisés, nous pouvons ouvrir un fond de secours pour les plus démunis."
+ 
+ tib_reduce_inflation_tribe_privilege:0 "Pardoner la dette interclan"
+ tib_reduce_inflation_tribe_privilege_desc:0 "La dette monetaire entre les tributs est l'un des facteurs clés dans la montée des prix de notre commerce interne. En trouvant un accord et en pardonnant ces dettes, nous devrions pouvoir stabiliser la situation."
+ tib_reduce_inflation_tribe:0 "Dette interclan pardoné"
+ 
+ tib_reduce_we_tribe_privilege:0 "Autoriser l'utilisation de la terre du chef"
+ tib_reduce_we_tribe_privilege_desc:0 "Le poid de la guerre pèse lourd sur les âmes de nos frères, en permettant l'utilisation de la terre du chef comme refuge et retraite, nous cherchons à soulager leurs peines."
+ tib_reduce_we_tribe:0 "Utilisation de la terre du chef autorisé"
+ 
+ 
+ EST_VAL_STATIST_IN_POWER_TIB:0 "Etatiste au pouvoir: §Y10%§!"
+ EST_VAL_CITIZENRY_REFORM_TIB:0 "Electorat des citoyens: §Y10%§!"
+ EST_VAL_MONARCHIST_IN_POWER_TIB:0 "Monarchistes au pouvoir: §Y10%§!"
+ EST_VAL_LANDHOLDERS_REFORM_TIB:0 "Electorat des propriétaires: §Y10%§!"
+ EST_VAL_RULER_LOYALTY_TIB:0 "Faction du dirigeant: §Y10%§!"

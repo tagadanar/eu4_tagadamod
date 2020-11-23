@@ -1,0 +1,34 @@
+﻿l_english: 
+ tib_adm_a:0 "Appointment Based on Performance"
+ tib_dip_a:0 "Appointment Based on Donations"
+ tib_mil_a:0 "Appointment Based on Property"
+
+ tib_adm_b:0 "Promotion of National Products Abroad"
+ tib_dip_b:0 "Promotion of Business Relations"
+ tib_mil_b:0 "Promotion of Culture and Tradition"
+
+ tib_adm_c:0 "Morale Focus"
+ tib_dip_c:0 "Navy Focus"
+ tib_mil_c:0 "Discipline Focus"
+ 
+ tib_small_trade_income:0 "Small Proportional Trade Income"
+ tib_moderate_trade_income:0 "Moderate Proportional Trade Income"
+ tib_large_trade_income:0 "Large Proportional Trade Income"
+ tib_dominant_trade_income:0 "Dominant Proportional Trade Income"
+ 
+ tib_small_production_income:0 "Small Proportional Production Income"
+ tib_moderate_production_income:0 "Moderate Proportional Production Income"
+ tib_large_production_income:0 "Large Proportional Production Income"
+ tib_dominant_production_income:0 "Dominant Proportional Production Income"
+ 
+ tib_coalition_guilds:0 "Form coalition with the Guilds.\nTheir Estate will not be more disloyal as a result, but will gain more influence."
+ tib_coalition_jacobins:0 "Form coalition with the Jacobins.\nTheir Estate will not be more disloyal as a result, but will gain more influence."
+ tib_coalition_buccaneers:0 "Form coalition with the Buccaneers.\nTheir Estate will not be more disloyal as a result, but will gain more influence."
+ 
+ tib_coalition_traders:0 "Form coalition with the Traders.\nTheir Estate will not be more disloyal as a result, but will gain more influence."
+ tib_coalition_royalists:0 "Form coalition with the Royalists.\nTheir Estate will not be more disloyal as a result, but will gain more influence."
+ tib_coalition_smugglers:0 "Form coalition with the Smugglers.\nTheir Estate will not be more disloyal as a result, but will gain more influence."
+ 
+ tib_coalition_aristocrats:0 "Form coalition with the Aristocrats.\nTheir Estate will not be more disloyal as a result, but will gain more influence."
+ tib_coalition_girondists:0 "Form coalition with the Girondists.\nTheir Estate will not be more disloyal as a result, but will gain more influence."
+ tib_coalition_captains:0 "Form coalition with the Captains.\nTheir Estate will not be more disloyal as a result, but will gain more influence."

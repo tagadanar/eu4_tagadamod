@@ -1,0 +1,38 @@
+﻿l_english: 
+ DISASTERS:0 "Stability Progress and Disasters"
+
+ bop_stability_progress:0 "Stability Progress"
+ 
+ DESC_BOP_STABILITY_PROGRESS:0 "\nCurrent Stability Progress: §Y[Root.current_stab.GetValue]§!\n\n Positive Threshold: §G[Root.threashold_stab_up.GetValue]§!\n Negative Threshold: §R[Root.threashold_stab_down.GetValue]§!\n §gIf a threshold is reached, the country will gain or lose stability accordingly (when gaining at +3, gain 100 £adm£ instead). The positive threshold is modified by Stability Cost Modifier.§!\n\nCurrent Progress Gain: §G[Root.total_estates.GetValue]§!\n From Estates: §Y[Root.prog_estates_mod.GetValue]§!\n *§Y[Root.prog_estates.GetValue]§! modified by §Yx[Root.absol_estates.GetValue]§! from §Y[Root.tib_absolutism.GetValue]§! Absolutism or Rev Zeal\n From Ruler Skill: §Y[Root.prog_mana_mod.GetValue]§!\n *§Y[Root.prog_mana.GetValue]§! modified by §Yx[Root.absol_mana.GetValue]§! from §Y[Root.tib_absolutism.GetValue]§! Absolutism or Rev Zeal\n From Current §YStability§!: §Y[Root.prog_current_stab.GetValue]§!\n\n §gStability Progress Gain is dependent on several factors:\n-The ruler's skills in £adm£, £dip£ and £mil£ gives from§! §R-0.3§! §gto§! §G0.3§! §gprogress for each category.\n-Every 20% influence from estates gives§! §Y1§! §gprogress,§! §Gloyal§! §gestates increases progress towards stability,§! §Rdisloyal§! §gones decreases it. The average of that value for every estate present is the progress value.\n-Current §YStability§! will make it progress towards zero stability, giving 1.5 stability progress per point of stability away from zero.\n-Absolutism or Rev Zeal modifies gain or loss from ruler skill by up to§! §Y+100%,§! §gand from estates by up to§! §Y-50%.§!"
+ 
+ DESC_BOP_STABILITY_NEG_PROGRESS:0 "\nCurrent Stability Progress Gain is §RNgative§!!\nCurrent Stability Progress: §Y[Root.current_stab.GetValue]§!\n\n Positive Threshold: §G[Root.threashold_stab_up.GetValue]§!\n Negative Threshold: §R[Root.threashold_stab_down.GetValue]§!\n §gIf a threshold is reached, the country will gain or lose stability accordingly (when gaining at +3, gain 100 £adm£ instead). The positive threshold is modified by Stability Cost Modifier.§!\n\nCurrent Progress Gain: §R[Root.total_estates.GetValue]§!\n From Estates: §Y[Root.prog_estates_mod.GetValue]§!\n *§Y[Root.prog_estates.GetValue]§! modified by §Y[Root.absol_estates.GetValue]§! from §Y[Root.tib_absolutism.GetValue]§! Absolutism or Rev Zeal\n From Ruler Skill: §Y[Root.prog_mana_mod.GetValue]§!\n *§Y[Root.prog_mana.GetValue]§! modified by §Y[Root.absol_mana.GetValue]§! from §Y[Root.tib_absolutism.GetValue]§! Absolutism or Rev Zeal\n From Current §YStability§!: §Y[Root.prog_current_stab.GetValue]§!\n\n §gStability Progress Gain is dependent on several factors:\n-The ruler's skills in £adm£, £dip£ and £mil£ gives from§! §R-0.3§! §gto§! §G0.3§! §gprogress for each category.\n-Every 20% influence from estates gives§! §Y1§! §gprogress,§! §Gloyal§! §gestates increases progress towards stability,§! §Rdisloyal§! §gones decreases it. The average of that value for every estate present is the progress value.\n-Current §YStability§! will make it progress towards zero stability, giving 1.5 stability progress per point of stability away from zero.\n -Absolutism or Rev Zeal modifies gain or loss from ruler skill by up to§! §Y+100%,§! §gand from estates by up to§! §Y-50%.§!"
+ 
+ 
+
+ tib_adm_a:0 "Appointment Based on Performance"
+ tib_dip_a:0 "Appointment Based on Donations"
+ tib_mil_a:0 "Appointment Based on Property"
+
+ tib_adm_b:0 "Promotion of National Products Abroad"
+ tib_dip_b:0 "Promotion of Business Relations"
+ tib_mil_b:0 "Promotion of Culture and Tradition"
+
+ tib_adm_c:0 "Morale Focus"
+ tib_dip_c:0 "Navy Focus"
+ tib_mil_c:0 "Discipline Focus"
+ 
+ 
+ 
+ 
+ 
+ tib_coalition_guilds:0 "Form coalition with the Guilds.\nTheir Estate will not be more disloyal as a result, but will gain more influence."
+ tib_coalition_jacobins:0 "Form coalition with the Jacobins.\nTheir Estate will not be more disloyal as a result, but will gain more influence."
+ tib_coalition_buccaneers:0 "Form coalition with the Buccaneers.\nTheir Estate will not be more disloyal as a result, but will gain more influence."
+ 
+ tib_coalition_traders:0 "Form coalition with the Traders.\nTheir Estate will not be more disloyal as a result, but will gain more influence."
+ tib_coalition_royalists:0 "Form coalition with the Royalists.\nTheir Estate will not be more disloyal as a result, but will gain more influence."
+ tib_coalition_smugglers:0 "Form coalition with the Smugglers.\nTheir Estate will not be more disloyal as a result, but will gain more influence."
+ 
+ tib_coalition_aristocrats:0 "Form coalition with the Aristocrats.\nTheir Estate will not be more disloyal as a result, but will gain more influence."
+ tib_coalition_girondists:0 "Form coalition with the Girondists.\nTheir Estate will not be more disloyal as a result, but will gain more influence."
+ tib_coalition_captains:0 "Form coalition with the Captains.\nTheir Estate will not be more disloyal as a result, but will gain more influence."

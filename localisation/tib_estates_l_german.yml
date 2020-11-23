@@ -1,0 +1,18 @@
+﻿l_german: 
+ tib_str_gov_interaction:0 "Regierung stärken"
+ tib_str_gov:0 "Regierung gestärkt"
+ 
+ tib_reduce_inflation_privilege:0 "Regulierung des Bankwesens"
+ tib_reduce_inflation_privilege_desc:0 "Die Inflation hat in unserem Land grassiert, wir müssen Maßnahmen ergreifen, um sie in den Griff zu bekommen. Indem wir die Banken regulieren und eine bessere Kontrolle des Umlaufs unserer Währung erreichen, könnten wir das vielleicht schaffen."
+ tib_reduce_inflation:0 "Reguliertes Bankwesen"
+ 
+ tib_reduce_we_privilege:0 "Offener Hilfsfonds"
+ tib_reduce_we_privilege_desc:0 "Unsere Nation ist vom Krieg zerrissen, und unsere Bevölkerung wird müde. Mit Hilfe des Klerus werden wir in der Lage sein, einen Hilfsfonds zu betreiben, um den Menschen in den schlimmsten Situationen zu helfen."
+ tib_reduce_we:0 "Hilfsfonds"
+ 
+ 
+ EST_VAL_STATIST_IN_POWER_TIB:0 "Statisten an der Macht: §Y10%§!"
+ EST_VAL_CITIZENRY_REFORM_TIB:0 "Bürgerschaftliche Wählerschaft: §Y10%§!"
+ EST_VAL_MONARCHIST_IN_POWER_TIB:0 "Monarchisten an der Macht: §Y10%§!"
+ EST_VAL_LANDHOLDERS_REFORM_TIB:0 "Landbesitzer Wählerschaft: §Y10%§!"
+ EST_VAL_RULER_LOYALTY_TIB:0 "Herrscher-Fraktion: §Y10%§!"
